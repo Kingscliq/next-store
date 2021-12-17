@@ -3,7 +3,7 @@ import Image from 'next/image';
 import styles from '../styles/Home.module.css';
 import About from './about';
 import React from 'react';
-import Button from '../components/Button';
+import Button from '../components/elements/Button';
 import btnStyles from '../components/button.module.css';
 
 export default function Home() {
