@@ -1,8 +1,13 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
+import styles from '../styles/Home.module.css';
+import About from './about';
+import React from 'react';
+import Button from '../components/Button';
+import btnStyles from '../components/button.module.css';
 
 export default function Home() {
+  const [aboutText, setAboutText] = React.useState('Welcome to my about Page');
   return (
     <div className={styles.container}>
       <Head>
@@ -51,7 +56,12 @@ export default function Home() {
           </a>
         </div>
       </main>
-
+      <About text={aboutText} />
+      <Button
+        text="Click Me!"
+        className={btnStyles.btn_primary}
+        onClick={() => alert('Button Clicked')}
+      />
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -65,5 +75,5 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
 }
