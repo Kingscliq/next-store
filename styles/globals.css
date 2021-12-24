@@ -18,5 +18,14 @@ a {
 }
 
 :root {
-  --primary: #fff;
+  --primary: #1696f2;
+  --secondary: #393b3d;
+  --grey: #efefef;
+  --dark: #000000;
+  --light: #ffffff;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
 }

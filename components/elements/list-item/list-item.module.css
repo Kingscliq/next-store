@@ -1,0 +1,39 @@
+.nav_links {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  transition: all 0.5s ease;
+}
+
+.nav_links:hover {
+  color: var(--primary);
+}
+
+.link_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link_icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link_icon_container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link_text {
+  padding-left: 20px;
+}
+
+.link_badge {
+  align-self: end;
+  margin-top: 10px;
+}
