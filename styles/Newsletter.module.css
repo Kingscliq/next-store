@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+.newsletter {
+    background: #333344;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    /* padding: 2rem; */
+}
+
+.newsletterImg {
+    position: relative;
+}
+
+.newsImg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: none;
+}
+
+.topic {
+    
+}
+
+.content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.content .smallFont {
+    font-size: 14px;
+    padding: 0;
+}
+
+.content h3 {
+    font-size: 2.2rem;
+}
+
+.imgContainer {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.imgDetails {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+}
+
+/* Extra small devices (phones, 928px and down) */
+@media only screen and (max-width: 928px) {
+    .container {
+        display: block;
+    }
+
+    .newsletterImg {
+        text-align: center;
+    }
+    
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
