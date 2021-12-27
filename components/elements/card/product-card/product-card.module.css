@@ -1,0 +1,50 @@
+.card_container {
+  width: 100%;
+  height: 337px;
+  position: relative;
+}
+
+.card_overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+  width: 100%;
+  padding: 43px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: var(--light);
+  font-family: 'Poppins', sans-serif;
+  position: absolute;
+  z-index: 3;
+  opacity: 1;
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0;
+    transform: rotateY(-100deg);
+    transform-origin: right;
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0);
+    transform-origin: right;
+  }
+}
+.card_overlay h3 {
+  color: var(--light);
+  font-size: 24px;
+}
+.price_box {
+  margin: 20px auto;
+}
+.hidden {
+  display: none;
+}
+
+.img_container {
+  position: absolute;
+}

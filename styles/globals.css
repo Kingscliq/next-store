@@ -29,3 +29,12 @@ a {
   width: 85%;
   margin: auto;
 }
+img {
+  width: 100%;
+}
+
+.category-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+}

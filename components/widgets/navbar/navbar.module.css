@@ -31,6 +31,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .socials > div {
   padding: 25px;
   border-right: 1px solid var(--secondary);
