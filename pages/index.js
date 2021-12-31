@@ -8,7 +8,8 @@ import btnStyles from '../components/elements/button/button.module.css';
 import badgeStyles from '../components/elements/badge/badge.module.css';
 import Badge from '../components/elements/badge';
 
-export default function Home() {
+export default function Home({ products }) {
+  console.log(products);
   const [aboutText, setAboutText] = React.useState('Welcome to my about Page');
   return (
     <div className={styles.container}>
@@ -38,3 +39,15 @@ export default function Home() {
     </div>
   );
 }
+
+export const getStaticProps = async () => {
+  const res = await fetch('https://fakestoreapi.com/products/');
+  const products = await res.json();
+  console.log(res.json());
+
+  return {
+    props: {
+      products,
+    },
+  };
+};

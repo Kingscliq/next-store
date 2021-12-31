@@ -5,8 +5,9 @@ import cardStyles from './product-card.module.css';
 import btnStyles from '../../button/button.module.css';
 import Button from '../../button';
 
-const ProductCard = ({ loading, cardImg, imgAlt }) => {
+const ProductCard = ({ cardImg, imgAlt }) => {
   const [overlay, setOverlay] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
   return (
     <section
       className={cardStyles.card_container}
