@@ -7,6 +7,7 @@ import Button from '../components/elements/Button';
 import btnStyles from '../components/elements/button/button.module.css';
 import badgeStyles from '../components/elements/badge/badge.module.css';
 import Badge from '../components/elements/badge';
+import { HomepageShowcase } from '../components/elements/carousel/homepage-showcase';
 
 export default function Home({ products }) {
   console.log(products);
@@ -28,6 +29,8 @@ export default function Home({ products }) {
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
         </p>
+
+      <HomepageShowcase/>
       </main>
       <About text={aboutText} />
       <Button
