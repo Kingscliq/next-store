@@ -3,6 +3,7 @@ import ShowcaseStyle from "./homepage-showcase.module.css";
 import Image from 'next/image'
 import Button from "../../button";
 import btnStyles from '../../button/button.module.css';
+import Styles from '../../../../styles/Home.module.css'
 
 
 const HomepageShowcase = () => {
@@ -28,7 +29,7 @@ const HomepageShowcase = () => {
 
 
 	return (
-		<section className={ShowcaseStyle.carousel_slider}>
+		<section className={`${ShowcaseStyle.carousel_slider} ${Styles.container}`}>
 			<div className={ShowcaseStyle.carousel_item} style={carourelItemStyle}>
 				<div className={ShowcaseStyle.main_item}>
 			        <div>
