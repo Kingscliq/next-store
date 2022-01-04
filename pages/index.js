@@ -6,6 +6,7 @@ import React from 'react';
 import Button from '../components/Button';
 import btnStyles from '../components/button.module.css';
 import Newsletter from '../components/Newsletter';
+import CollectionSlider from '../components/CollectionSlider';
 
 export default function Home() {
   const [aboutText, setAboutText] = React.useState('Welcome to my about Page');
@@ -81,6 +82,7 @@ export default function Home() {
       </div>
 
       < Newsletter />
+      < CollectionSlider />
     </>
   );
 }
