@@ -51,7 +51,7 @@ const CollectionSlider = ({ninjas}) => {
                       "spaceBetween": 10
                     },
                     "768": {
-                      "slidesPerView": 1,
+                      "slidesPerView": 1.5,
                       "spaceBetween": 10
                     },
                     "1024": {
@@ -61,7 +61,7 @@ const CollectionSlider = ({ninjas}) => {
                 }} 
                 // navigation
                 // pagination={{ clickable: true }}
-                // scrollbar={{ draggable: true }}
+                scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
