@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+.container {
+    padding: 2rem;
+    background: #F2F2F2;
+}
+
+.slides {
+    height: auto;
+    /* width: 900px; */
+    background: #FFFBFB;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 2rem;
+    padding: 2rem;
+}
+
+
+
+.Imgslides {
+
+}
+
+.slidesContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+}
+
+.containerHeader {
+    font-size: 2.3rem;
+    padding: 0 2rem;
+}
+
+.slidesContent h3 {
+    font-size: 2.25rem;
+    font-weight: 400;
+}
+
+.productDescription {
+    color: #000000;
+    opacity: 0.7;
+}
+
+.productPrice {
+    display: flex;
+}
+
+.price, .size {
+    margin-right: 2rem;
+    color: #334;
+    font-weight: 500;
+}
+
+.imgs {
+    position: relative;
+}
+
+/* .Imgslidess{
+    position: absolute;
+    width: 353px;
+    height: 483px;
+    left: 716px;
+    top: 45px;
+    z-index: 2;
+    background: #1696F2;
+} */
+
+
+/* Extra small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 2rem 0;
+    }
+
+    .slides {
+        display: block;
+    }
+    
+    .slidesContent {        
+        width: auto;
+    }
+
+    .slidesContent h3 {
+        font-size: 2rem;
+        font-weight: 400;
+    }
+}
