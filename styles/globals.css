@@ -13,4 +13,28 @@ a {
 
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary: #1696f2;
+  --secondary: #393b3d;
+  --grey: #efefef;
+  --dark: #000000;
+  --light: #ffffff;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+img {
+  width: 100%;
+}
+
+.category-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
 }

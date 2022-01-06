@@ -1,0 +1,12 @@
+.badge {
+  height: 9px;
+  width: 9px;
+  background-color: var(--primary);
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  font-size: 7px;
+  cursor: pointer;
+}
