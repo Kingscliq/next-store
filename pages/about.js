@@ -1,6 +1,4 @@
 import React from 'react';
-import { FaShoppingCart } from 'react-icons/fa';
-import { IoIosArrowDown } from 'react-icons/io';
 import ProductCard from '../components/elements/card/product-card';
 import ListItem from '../components/elements/list-item';
 import { Speaker } from '../assets/images';
