@@ -2,6 +2,18 @@
   list-style-type: none;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background-color: var(--grey);
+}
+
+@media only screen and (max-width: 480px) {
+  .tab_container {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .tab_container {
+    grid-template-columns: 1fr;
+  }
 }
 
 .tab_item {

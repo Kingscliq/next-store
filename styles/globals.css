@@ -38,3 +38,14 @@ img {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
+
+@media only screen and (max-width: 480px) {
+  .category-section {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .category-section {
+    grid-template-columns: 1fr;
+  }
+}

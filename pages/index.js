@@ -11,10 +11,17 @@ import { HomepageShowcase } from '../components/elements/carousel/homepage-showc
 import Navbar from '../components/widgets/navbar';
 import CategriesCard from '../components/elements/card/categories-card';
 import TabGroup from '../components/elements/tab/tab-group';
+import { useGetAllProductsQuery } from '../store/products/products-api';
+import ProductCard from '../components/elements/card/product-card';
+import { ProductSkeleton } from '../components/elements/product-skeleton';
 
-export default function Home({ products }) {
-  console.log(products);
-  const [aboutText, setAboutText] = React.useState('Welcome to my about Page');
+export default function Home() {
+  const { data: products, error, isLoading } = useGetAllProductsQuery();
+  // const [aboutText, setAboutText] = React.useState('Welcome to my about Page');
+  const electronicProducts = products?.filter(
+    product => product.category === 'electronics'
+  );
+
   return (
     <div>
       <Head>
@@ -49,18 +56,31 @@ export default function Home({ products }) {
         </section>
       </main>
       <TabGroup />
+
+      <div className="category-section container">
+        {isLoading && <ProductSkeleton />}
+
+        {electronicProducts?.map(product => (
+          <div>
+            <ProductCard
+              title={product.title}
+              price={product.price}
+              cardImg={product.image}
+              imgAlt={product.description}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
 
-export const getStaticProps = async () => {
-  const res = await fetch('https://fakestoreapi.com/products/');
-  const products = await res.json();
-  console.log(res.json());
+// export const getStaticProps = async () => {
+//
 
-  return {
-    props: {
-      products,
-    },
-  };
-};
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
