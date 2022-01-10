@@ -1,6 +1,5 @@
 import newsStyles from '../styles/Newsletter.module.css';
 import collectionStyles from '../styles/CollectionSlider.module.css';
-import Button from './elements/button/index.js';
 import btnStyles from './elements/button/button.module.css';
 import Image from 'next/image';
 import { FaAngleRight } from "react-icons/fa";
