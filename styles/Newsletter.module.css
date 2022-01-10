@@ -46,12 +46,14 @@
 .imgContainer {
     position: relative;
     margin-top: 2rem;
+    color: #fff;
 }
 
 .imgDetails {
     position: absolute;
     top: 10px;
     left: 90px;
+    color: #000;
 }
 
 /* Extra small devices (phones, 928px and down) */

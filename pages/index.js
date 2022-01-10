@@ -14,6 +14,11 @@ import TabGroup from '../components/elements/tab/tab-group';
 import { useGetAllProductsQuery } from '../store/products/products-api';
 import ProductCard from '../components/elements/card/product-card';
 import { ProductSkeleton } from '../components/elements/product-skeleton';
+import Newsletter from '../components/Newsletter';
+import CollectionSlider from '../components/CollectionSlider';
+import Subscribe from '../components/Subscribe';
+import Footer from '../components/Footer';
+import Topnav from '../components/Topnav';
 
 export default function Home() {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
@@ -30,6 +35,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      < Topnav />
       <main className={styles.main}>
         <Navbar />
 
@@ -71,6 +77,10 @@ export default function Home() {
           </div>
         ))}
       </div>
+      < Newsletter />
+      < CollectionSlider />
+      < Subscribe />
+      < Footer />
     </div>
   );
 }

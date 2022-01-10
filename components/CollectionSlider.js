@@ -10,9 +10,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Image from 'next/image';
 // import img1 from '../public/newsletterImg.svg';
-import Button from '../components/Button';
+// import Button from '../components/Button';
+import Button from './elements/button/index.js';
 import btnStyles from '../components/button.module.css';
 import newsStyles from '../styles/Newsletter.module.css';
+import { FaAngleRight } from "react-icons/fa";
 
 export const getStaticProps = async () => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
@@ -98,19 +100,18 @@ const CollectionSlider = ({ninjas}) => {
 
                             
                                 <div className={newsStyles.imgContainer}>
-                                    <Button
-                                        text="Buy Now"
-                                        className={btnStyles.btn_dark}
+                                    
+                                    <button
+                                        className={btnStyles.btn_darke}
                                         onClick={() => alert('Button Clicked')}
-                                    />
-                                    <div className={newsStyles.imgDetails}>
-                                        <Image 
-                                            src="/rightIcon.svg" 
-                                            alt="right Icon" 
-                                            width={72} 
-                                            height={16} 
-                                        />
+                                    >
+                                        Buy now 
+                                    </button>
+
+                                    <div className={collectionStyles.imgDetails}>
+                                        < FaAngleRight />
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -167,18 +168,15 @@ const CollectionSlider = ({ninjas}) => {
 
                             
                                 <div className={newsStyles.imgContainer}>
-                                    <Button
-                                        text="Buy Now"
-                                        className={btnStyles.btn_dark}
+                                    <button
+                                        className={btnStyles.btn_darke}
                                         onClick={() => alert('Button Clicked')}
-                                    />
-                                    <div className={newsStyles.imgDetails}>
-                                        <Image 
-                                            src="/rightIcon.svg" 
-                                            alt="right Icon" 
-                                            width={72} 
-                                            height={16} 
-                                        />
+                                    >
+                                        Buy now 
+                                    </button>
+
+                                    <div className={collectionStyles.imgDetails}>
+                                        < FaAngleRight />
                                     </div>
                                 </div>
                             </div>
@@ -239,18 +237,15 @@ const CollectionSlider = ({ninjas}) => {
 
                             
                                 <div className={newsStyles.imgContainer}>
-                                    <Button
-                                        text="Buy Now"
-                                        className={btnStyles.btn_dark}
+                                    <button
+                                        className={btnStyles.btn_darke}
                                         onClick={() => alert('Button Clicked')}
-                                    />
-                                    <div className={newsStyles.imgDetails}>
-                                        <Image 
-                                            src="/rightIcon.svg" 
-                                            alt="right Icon" 
-                                            width={72} 
-                                            height={16} 
-                                        />
+                                    >
+                                        Buy now 
+                                    </button>
+
+                                    <div className={collectionStyles.imgDetails}>
+                                        < FaAngleRight />
                                     </div>
                                 </div>
                             </div>
@@ -310,18 +305,15 @@ const CollectionSlider = ({ninjas}) => {
 
                             
                                 <div className={newsStyles.imgContainer}>
-                                    <Button
-                                        text="Buy Now"
-                                        className={btnStyles.btn_dark}
+                                    <button
+                                        className={btnStyles.btn_darke}
                                         onClick={() => alert('Button Clicked')}
-                                    />
-                                    <div className={newsStyles.imgDetails}>
-                                        <Image 
-                                            src="/rightIcon.svg" 
-                                            alt="right Icon" 
-                                            width={72} 
-                                            height={16} 
-                                        />
+                                    >
+                                        Buy now 
+                                    </button>
+
+                                    <div className={collectionStyles.imgDetails}>
+                                        < FaAngleRight />
                                     </div>
                                 </div>
                             </div>
