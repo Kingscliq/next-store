@@ -30,7 +30,7 @@
 
 .containerHeader {
     font-size: 2.3rem;
-    padding: 0 2rem;
+    padding: 1.8 2rem;
 }
 
 .slidesContent h3 {
@@ -55,6 +55,13 @@
 
 .imgs {
     position: relative;
+}
+
+.imgDetails {
+    position: absolute;
+    top: 10px;
+    left: 90px;
+    color: #000;
 }
 
 /* .Imgslidess{

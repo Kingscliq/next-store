@@ -10,6 +10,9 @@ import Badge from '../components/elements/badge';
 import { HomepageShowcase } from '../components/elements/carousel/homepage-showcase';
 import Navbar from '../components/widgets/navbar';
 import CategriesCard from '../components/elements/card/categories-card';
+import Newsletter from '../components/Newsletter';
+import CollectionSlider from '../components/CollectionSlider';
+import Subscribe from '../components/Subscribe';
 
 export default function Home({ products }) {
   console.log(products);
@@ -47,7 +50,11 @@ export default function Home({ products }) {
         onClick={() => alert('Button Clicked')}
       />
       <Badge label="1" />
-    </div>
+
+      < Newsletter />
+      < CollectionSlider />
+      < Subscribe />
+    </div> 
   );
 }
 

@@ -1,7 +1,9 @@
 import newsStyles from '../styles/Newsletter.module.css';
-import Button from '../components/Button';
-import btnStyles from '../components/button.module.css';
+import collectionStyles from '../styles/CollectionSlider.module.css';
+import Button from './elements/button/index.js';
+import btnStyles from './elements/button/button.module.css';
 import Image from 'next/image';
+import { FaAngleRight } from "react-icons/fa";
 
 const Newsletter = () => {
     return (
@@ -28,18 +30,15 @@ const Newsletter = () => {
 
                         
                         <div className={newsStyles.imgContainer}>
-                            <Button
-                                text="Buy Now"
-                                className={btnStyles.btn_white}
+                            <button
+                                className={btnStyles.btn_whitee}
                                 onClick={() => alert('Button Clicked')}
-                            />
-                            <div className={newsStyles.imgDetails}>
-                                <Image 
-                                    src="/rightIcon.svg" 
-                                    alt="right Icon" 
-                                    width={72} 
-                                    height={16} 
-                                />
+                            >
+                                Buy now 
+                            </button>
+
+                            <div className={collectionStyles.imgDetails}>
+                                < FaAngleRight style={{color: 'white'}}/>
                             </div>
                         </div>
                     </div>
