@@ -10,6 +10,11 @@ import Badge from '../components/elements/badge';
 import { HomepageShowcase } from '../components/elements/carousel/homepage-showcase';
 import Navbar from '../components/widgets/navbar';
 import CategriesCard from '../components/elements/card/categories-card';
+import Newsletter from '../components/Newsletter';
+import CollectionSlider from '../components/CollectionSlider';
+import Subscribe from '../components/Subscribe';
+import Footer from '../components/Footer';
+import Topnav from '../components/Topnav';
 
 export default function Home({ products }) {
   console.log(products);
@@ -22,7 +27,9 @@ export default function Home({ products }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      < Topnav />
       <main className={styles.main}>
+        
         <Navbar/>
 
         <HomepageShowcase/>
@@ -47,7 +54,12 @@ export default function Home({ products }) {
         onClick={() => alert('Button Clicked')}
       />
       <Badge label="1" />
-    </div>
+
+      < Newsletter />
+      < CollectionSlider />
+      < Subscribe />
+      < Footer />
+    </div> 
   );
 }
 

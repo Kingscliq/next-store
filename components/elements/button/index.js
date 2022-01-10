@@ -2,7 +2,8 @@ import React from 'react';
 import btnStyle from './button.module.css';
 import { Loader } from '../../../assets/icons';
 import Image from 'next/image';
-
+// import Button from './elements/button/index.js';
+// components\elements\button\index.js
 const Button = ({
   label,
   className,
