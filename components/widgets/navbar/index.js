@@ -11,12 +11,12 @@ import {
 import { IoIosArrowDown } from 'react-icons/io';
 import ListItem from '../../elements/list-item';
 
-const Navbar = () => {
+const Navbar = ({ mobileNav, setMobileNav }) => {
   return (
     <section className={navStyles.navbar}>
       <nav className={[navStyles.main_nav, 'container'].join(' ')}>
         <div className={navStyles.logo_section}>
-          <div className={navStyles.app_bar}>
+          <div className={navStyles.app_bar} onClick={() => setMobileNav(true)}>
             <FaBars />
           </div>
           <div>NextStore</div>
