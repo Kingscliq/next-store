@@ -23,12 +23,12 @@ import MobileNav from '../components/widgets/mobile-nav';
 
 export default function Home() {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
-  const [mobileNav, setMobileNav] = useState(false);
-  // const [aboutText, setAboutText] = React.useState('Welcome to my about Page');
-  const electronicProducts = products?.filter(
-    product => product.category === 'electronics'
-  );
 
+  const [mobileNav, setMobileNav] = useState(false);
+  const electronicProducts = products?.filter(
+    product => product.rating.rate > 4
+  );
+  console.log(products);
   return (
     <div>
       <Head>
@@ -63,7 +63,9 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <TabGroup />
+      <div className="container">
+        <Button label="Best Sales" className="btn btn-primary" />
+      </div>
 
       <div className="category-section container">
         {isLoading && <ProductSkeleton />}
