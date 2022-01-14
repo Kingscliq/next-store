@@ -38,3 +38,28 @@ img {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
 }
+
+.btn {
+  padding: 10px 25px;
+  font-weight: 500;
+  border: none;
+}
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--light);
+  transition: all 0.5s ease;
+}
+
+.btn-primary:hover {
+  opacity: 0.8;
+}
+@media only screen and (max-width: 480px) {
+  .category-section {
+    grid-template-columns: 1fr;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .category-section {
+    grid-template-columns: 1fr;
+  }
+}

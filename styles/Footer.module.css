@@ -1,0 +1,59 @@
+.footerDesign {
+    padding: 4rem 4.5rem 1rem 4.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerLogo h3 {   
+    font-weight: 100;
+    color: #000000;
+    font-size: 20px
+}
+
+.footerLogo p {
+    color: #334;
+    padding-top: 0.7rem;
+    opacity: 0.6;
+    font-size: 14px;
+}
+
+.icon {
+    font-size: 26px;
+    color: #A2ABAF;
+}
+
+.SM {
+    font-size: 30px;
+    color: #334;
+    /* padding: 1rem; */
+}
+
+.SM2 {
+    font-size: 14px;
+    color: #334;
+}
+
+.SM2:hover {
+    color: #699BF7;
+} 
+
+.socialmediaicons {
+    display: flex;
+}
+
+.socialicons {
+    padding-right: 0.7rem;
+}
+
+@media only screen and (max-width: 928px) {
+    .footerDesign {
+        display: block;
+        text-align: center;        
+    }
+    
+    .socialmediaicons {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+}

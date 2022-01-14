@@ -1,0 +1,31 @@
+.btn_primary {
+  background-color: #1696F2;
+  color: rgb(241, 38, 38);
+}
+
+.btn {
+  padding: 10px 12px;
+}
+ 
+.btn-default {
+  background-color: #333;
+  color: #fff;
+}
+
+.btn_whitee {
+  border: 2px solid #ffffff;
+  background: none;
+  color: #fff;
+  padding: 10px 75px 10px 10px;
+}
+
+.btn_darke {
+  border: 2px solid #334;
+  background: none;
+  color: #334;
+  padding: 10px 75px 10px 10px;
+}
+
+.btn_darke:hover, .btn_whitee:hover, .btn-default:hover {
+  cursor: pointer;
+}

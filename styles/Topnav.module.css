@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 0.7rem 2rem;
+}
+
+.containerSpan {
+    padding-left: 0.7rem;
+}
+
+.topnavflexed {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top {
+    padding: 0 1rem 0 1rem;
+    border-left: 1px solid #334;
+}
+
+.topFirst {
+    padding-right: 1rem;
+}
+
+@media only screen and (max-width: 768px) {
+    .topnavcall {
+        display: none;
+    }
+
+    .container {
+        justify-content: flex-end;
+        padding-right: 0;
+    }
+}
