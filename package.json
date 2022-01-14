@@ -19,13 +19,9 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-<<<<<<< HEAD
-    "react-responsive-carousel": "^3.2.22",
-=======
     "react-loading-skeleton": "^3.0.2",
     "react-redux": "^7.2.6",
     "swiper": "^7.4.1",
->>>>>>> d7985934d1608192777e1f786665026c3a6a9f4a
     "yup": "^0.32.11"
   },
   "devDependencies": {
