@@ -20,6 +20,7 @@ import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import Topnav from '../components/Topnav';
 import MobileNav from '../components/widgets/mobile-nav';
+import { checkRatings } from '../utils/check-ratings';
 
 export default function Home() {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
@@ -66,20 +67,21 @@ export default function Home() {
       <div className="container">
         <Button label="Best Sales" className="btn btn-primary" />
       </div>
-
+      {isLoading && <ProductSkeleton />}
       <div className="category-section container">
-        {isLoading && <ProductSkeleton />}
-
-        {electronicProducts?.map(product => (
-          <div>
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              cardImg={product.image}
-              imgAlt={product.description}
-            />
-          </div>
-        ))}
+        {electronicProducts?.map(
+          ({ title, price, image, description, rating }) => (
+            <div>
+              <ProductCard
+                title={title}
+                price={price}
+                cardImg={image}
+                imgAlt={description}
+                ratings={rating.rate}
+              />
+            </div>
+          )
+        )}
       </div>
       <Newsletter />
       <CollectionSlider />
@@ -88,13 +90,3 @@ export default function Home() {
     </div>
   );
 }
-
-// export const getStaticProps = async () => {
-//
-
-//   return {
-//     props: {
-//       data,
-//     },
-//   };
-// };

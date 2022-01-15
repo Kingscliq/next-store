@@ -1,0 +1,8 @@
+.tab_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--grey);
+  padding: 10px 12px;
+  height: 70px;
+}

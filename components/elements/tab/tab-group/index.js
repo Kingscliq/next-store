@@ -5,14 +5,27 @@ import {
   femaleClothIcon,
   jewelryIcon,
   menCloth,
+  allIcon,
 } from '../../../../assets/icons';
 import tabStyles from './tab-group.module.css';
 
-const TabGroup = () => {
-  const [activeTab, setActiveTab] = useState('electronics');
+const TabGroup = ({ activeTab, setActiveTab }) => {
+  console.log(activeTab);
   return (
     <header>
       <ul className={[tabStyles.tab_container, `container`].join(' ')}>
+        <li
+          className={[
+            tabStyles.tab_item,
+            `${activeTab === 'all' ? tabStyles.active_tab : null}`,
+          ].join(' ')}
+          onClick={() => setActiveTab('all')}
+        >
+          <div>
+            <Image src={allIcon} />
+          </div>
+          <div>ALL</div>
+        </li>
         <li
           className={[
             tabStyles.tab_item,

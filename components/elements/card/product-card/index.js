@@ -5,8 +5,10 @@ import cardStyles from './product-card.module.css';
 import btnStyles from '../../button/button.module.css';
 import Button from '../../button';
 import { truncate } from '../../../../utils/truncate';
+import ReactStars from 'react-rating-stars-component';
+import { checkRatings } from '../../../../utils/check-ratings';
 
-const ProductCard = ({ cardImg, imgAlt, title, price }) => {
+const ProductCard = ({ cardImg, imgAlt, title, price, ratings }) => {
   const [overlay, setOverlay] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   return (
@@ -18,6 +20,9 @@ const ProductCard = ({ cardImg, imgAlt, title, price }) => {
       <div className={cardStyles.card_content}>
         <div>
           <h3>{truncate(title, 20)}</h3>
+        </div>
+        <div>
+          <ReactStars size={20} value={checkRatings(ratings)} edit={false} />
         </div>
         <div>
           <div className={cardStyles.price_box}>${price}</div>
