@@ -6,13 +6,18 @@ import productStyles from '../../../../styles/product.module.css';
 import Button from '../../../../components/elements/button';
 import Skeleton from 'react-loading-skeleton';
 import { checkRatings } from '../../../../utils/check-ratings';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../../../store/cart/cart-slice';
+
 const Product = () => {
   const router = useRouter();
   const { id } = router.query;
   const { data, isFetching, error } = useGetSingleProductQuery(id);
-  console.log(data);
+  const dispatch = useDispatch();
 
-  console.log(checkRatings(data?.rating.rate));
+  const handleAddToCart = product => {
+    dispatch(addToCart(product));
+  };
   return (
     <section
       className={[productStyles.product_container, 'container mt-5'].join(' ')}
@@ -85,7 +90,11 @@ const Product = () => {
           {isFetching && <Skeleton width={200} height={60} />}
           {data && (
             <div className="mb-1">
-              <Button className="btn btn-primary" label="Add to Cart" />
+              <Button
+                className="btn btn-primary"
+                label="Add to Cart"
+                onClick={() => handleAddToCart(data)}
+              />
             </div>
           )}
         </div>

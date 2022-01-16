@@ -1,15 +1,12 @@
 import React, { useState } from 'react';
 import { useGetAllProductsQuery } from '../../store/products/products-api';
-import Topnav from '../../components/Topnav';
-import MobileNav from '../../components/widgets/mobile-nav';
-import Navbar from '../../components/widgets/navbar';
-import styles from '../../styles/Home.module.css';
 import TabGroup from '../../components/elements/tab/tab-group';
 import { ProductSkeleton } from '../../components/elements/product-skeleton';
 import ProductCard from '../../components/elements/card/product-card';
 import ShopTab from '../../components/widgets/shop-tab';
 import { addToCart } from '../../store/cart/cart-slice';
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
 
 const Shop = () => {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
@@ -20,21 +17,23 @@ const Shop = () => {
   };
   const AllProducts = () => {
     const allProducts = products?.map(
-      ({ title, price, description, rating, image }) => {
+      ({ title, price, description, rating, image, id }) => {
         return (
-          <div>
-            <ProductCard
-              title={title}
-              price={price}
-              cardImg={image}
-              imgAlt={description}
-              ratings={rating.rate}
-              handleButtonClick={() =>
-                addProductToCart({ title, price, description, rating, image })
-              }
-              buttonText="Add To Cart"
-            />
-          </div>
+          <Link href={`/shop/products/${id}`}>
+            <div>
+              <ProductCard
+                title={title}
+                price={price}
+                cardImg={image}
+                imgAlt={description}
+                ratings={rating.rate}
+                handleButtonClick={() =>
+                  addProductToCart({ title, price, description, rating, image })
+                }
+                buttonText="Add To Cart"
+              />
+            </div>
+          </Link>
         );
       }
     );
@@ -47,17 +46,19 @@ const Shop = () => {
       ?.filter(product => product.category === 'jewelery')
       .map(product => {
         return (
-          <div>
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              cardImg={product.image}
-              imgAlt={product.description}
-              ratings={product.rating.rate}
-              handleButtonClick={() => addProductToCart(product)}
-              buttonText="Add To Cart"
-            />
-          </div>
+          <Link href={`/shop/products/${product.id}`}>
+            <div>
+              <ProductCard
+                title={product.title}
+                price={product.price}
+                cardImg={product.image}
+                imgAlt={product.description}
+                ratings={product.rating.rate}
+                handleButtonClick={() => addProductToCart(product)}
+                buttonText="Add To Cart"
+              />
+            </div>
+          </Link>
         );
       });
   };
@@ -66,17 +67,19 @@ const Shop = () => {
       .filter(product => product.category === "women's clothing")
       .map(product => {
         return (
-          <div>
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              cardImg={product.image}
-              imgAlt={product.description}
-              ratings={product.rating.rate}
-              buttonText="Add To Cart"
-              handleButtonClick={() => addProductToCart(product)}
-            />
-          </div>
+          <Link href={`/shop/products/${product.id}`}>
+            <div>
+              <ProductCard
+                title={product.title}
+                price={product.price}
+                cardImg={product.image}
+                imgAlt={product.description}
+                ratings={product.rating.rate}
+                buttonText="Add To Cart"
+                handleButtonClick={() => addProductToCart(product)}
+              />
+            </div>
+          </Link>
         );
       });
   };
@@ -85,17 +88,19 @@ const Shop = () => {
       .filter(product => product.category === "men's clothing")
       .map(product => {
         return (
-          <div>
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              cardImg={product.image}
-              imgAlt={product.description}
-              ratings={product.rating.rate}
-              buttonText="Add To Cart"
-              handleButtonClick={() => addProductToCart(product)}
-            />
-          </div>
+          <Link href={`/shop/products/${product.id}`}>
+            <div>
+              <ProductCard
+                title={product.title}
+                price={product.price}
+                cardImg={product.image}
+                imgAlt={product.description}
+                ratings={product.rating.rate}
+                buttonText="Add To Cart"
+                handleButtonClick={() => addProductToCart(product)}
+              />
+            </div>
+          </Link>
         );
       });
   };
@@ -104,17 +109,19 @@ const Shop = () => {
       .filter(product => product.category === 'electronics')
       .map(product => {
         return (
-          <div>
-            <ProductCard
-              title={product.title}
-              price={product.price}
-              cardImg={product.image}
-              imgAlt={product.description}
-              ratings={product.rating.rate}
-              buttonText="Add To Cart"
-              handleButtonClick={() => addProductToCart(product)}
-            />
-          </div>
+          <Link href={`/shop/products/${product.id}`}>
+            <div>
+              <ProductCard
+                title={product.title}
+                price={product.price}
+                cardImg={product.image}
+                imgAlt={product.description}
+                ratings={product.rating.rate}
+                buttonText="Add To Cart"
+                handleButtonClick={() => addProductToCart(product)}
+              />
+            </div>
+          </Link>
         );
       });
   };
