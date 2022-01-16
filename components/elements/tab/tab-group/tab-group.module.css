@@ -24,6 +24,7 @@
   color: var(--light);
   flex-direction: column;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .tab_item:hover {

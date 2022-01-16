@@ -8,27 +8,36 @@ import TabGroup from '../../components/elements/tab/tab-group';
 import { ProductSkeleton } from '../../components/elements/product-skeleton';
 import ProductCard from '../../components/elements/card/product-card';
 import ShopTab from '../../components/widgets/shop-tab';
+import { addToCart } from '../../store/cart/cart-slice';
+import { useDispatch } from 'react-redux';
 
 const Shop = () => {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
   const [activeTab, setActiveTab] = useState('all');
-
-  console.log(products);
-
+  const dispatch = useDispatch();
+  const addProductToCart = product => {
+    dispatch(addToCart(product));
+  };
   const AllProducts = () => {
-    const allProducts = products?.map(product => {
-      return (
-        <div>
-          <ProductCard
-            title={product.title}
-            price={product.price}
-            cardImg={product.image}
-            imgAlt={product.description}
-            ratings={product.rating.rate}
-          />
-        </div>
-      );
-    });
+    const allProducts = products?.map(
+      ({ title, price, description, rating, image }) => {
+        return (
+          <div>
+            <ProductCard
+              title={title}
+              price={price}
+              cardImg={image}
+              imgAlt={description}
+              ratings={rating.rate}
+              handleButtonClick={() =>
+                addProductToCart({ title, price, description, rating, image })
+              }
+              buttonText="Add To Cart"
+            />
+          </div>
+        );
+      }
+    );
 
     return allProducts;
   };
@@ -45,6 +54,8 @@ const Shop = () => {
               cardImg={product.image}
               imgAlt={product.description}
               ratings={product.rating.rate}
+              handleButtonClick={() => addProductToCart(product)}
+              buttonText="Add To Cart"
             />
           </div>
         );
@@ -62,6 +73,8 @@ const Shop = () => {
               cardImg={product.image}
               imgAlt={product.description}
               ratings={product.rating.rate}
+              buttonText="Add To Cart"
+              handleButtonClick={() => addProductToCart(product)}
             />
           </div>
         );
@@ -79,6 +92,8 @@ const Shop = () => {
               cardImg={product.image}
               imgAlt={product.description}
               ratings={product.rating.rate}
+              buttonText="Add To Cart"
+              handleButtonClick={() => addProductToCart(product)}
             />
           </div>
         );
@@ -96,6 +111,8 @@ const Shop = () => {
               cardImg={product.image}
               imgAlt={product.description}
               ratings={product.rating.rate}
+              buttonText="Add To Cart"
+              handleButtonClick={() => addProductToCart(product)}
             />
           </div>
         );
@@ -103,9 +120,7 @@ const Shop = () => {
   };
   return (
     <div>
-      <Topnav />
-      <Navbar />
-      <ShopTab />
+      <ShopTab activeTab={activeTab} />
       <TabGroup activeTab={activeTab} setActiveTab={setActiveTab} />
       {isLoading && <ProductSkeleton />}
       <div className="category-section container">

@@ -8,10 +8,15 @@ import {
   FaShoppingCart,
   FaUserAlt,
 } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import { IoIosArrowDown } from 'react-icons/io';
 import ListItem from '../../elements/list-item';
+import { cart } from '../../../store/cart/cart-slice';
 
 const Navbar = ({ mobileNav, setMobileNav }) => {
+  const cartItems = useSelector(cart);
+
+  console.log(cartItems);
   return (
     <section className={navStyles.navbar}>
       <nav className={[navStyles.main_nav, 'container'].join(' ')}>
@@ -55,7 +60,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
             <ListItem
               icon={<FaShoppingCart />}
               href="https://facebook.com"
-              badgeLabel="1"
+              badgeLabel={(cartItems.length > 0 && cartItems?.length) || '0'}
             />
           </div>
         </div>
@@ -63,7 +68,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
           <ListItem
             icon={<FaShoppingCart />}
             href="https://facebook.com"
-            badgeLabel="1"
+            badgeLabel={(cartItems.length > 0 && cartItems?.length) || '0'}
           />
         </div>
       </nav>

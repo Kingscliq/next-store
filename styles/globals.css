@@ -46,6 +46,7 @@ img {
   font-weight: 500;
   border: none;
   font-family: 'Poppins', sans-serif;
+  cursor: pointer;
 }
 .btn-primary {
   background-color: var(--primary);

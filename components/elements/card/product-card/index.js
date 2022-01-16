@@ -8,7 +8,15 @@ import { truncate } from '../../../../utils/truncate';
 import ReactStars from 'react-rating-stars-component';
 import { checkRatings } from '../../../../utils/check-ratings';
 
-const ProductCard = ({ cardImg, imgAlt, title, price, ratings }) => {
+const ProductCard = ({
+  cardImg,
+  imgAlt,
+  title,
+  price,
+  ratings,
+  handleButtonClick,
+  buttonText,
+}) => {
   const [overlay, setOverlay] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   return (
@@ -29,9 +37,10 @@ const ProductCard = ({ cardImg, imgAlt, title, price, ratings }) => {
           <div>
             <Button
               className={btnStyles.btn_black}
-              label="Buy Now"
+              label={buttonText || 'Buy Now'}
               loading={loading}
               loadingText={'Loading...'}
+              onClick={handleButtonClick}
             />
           </div>
         </div>
