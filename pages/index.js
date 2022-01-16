@@ -1,16 +1,9 @@
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from '../styles/Home.module.css';
-import About from './about';
 import React, { useState } from 'react';
 import Button from '../components/elements/Button';
-import btnStyles from '../components/elements/button/button.module.css';
-import badgeStyles from '../components/elements/badge/badge.module.css';
-import Badge from '../components/elements/badge';
 import { HomepageShowcase } from '../components/elements/carousel/homepage-showcase';
-import Navbar from '../components/widgets/navbar';
 import CategriesCard from '../components/elements/card/categories-card';
-import TabGroup from '../components/elements/tab/tab-group';
 import { useGetAllProductsQuery } from '../store/products/products-api';
 import ProductCard from '../components/elements/card/product-card';
 import { ProductSkeleton } from '../components/elements/product-skeleton';
@@ -18,8 +11,7 @@ import Newsletter from '../components/Newsletter';
 import CollectionSlider from '../components/CollectionSlider';
 import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
-import Topnav from '../components/Topnav';
-import MobileNav from '../components/widgets/mobile-nav';
+import Link from 'next/link';
 
 export default function Home() {
   const { data: products, isLoading } = useGetAllProductsQuery();
@@ -63,16 +55,18 @@ export default function Home() {
       {isLoading && <ProductSkeleton />}
       <div className="category-section container">
         {electronicProducts?.map(
-          ({ title, price, image, description, rating }) => (
-            <div>
-              <ProductCard
-                title={title}
-                price={price}
-                cardImg={image}
-                imgAlt={description}
-                ratings={rating.rate}
-              />
-            </div>
+          ({ title, price, image, description, rating, id }) => (
+            <Link href={`/shop/products/${id}`}>
+              <div>
+                <ProductCard
+                  title={title}
+                  price={price}
+                  cardImg={image}
+                  imgAlt={description}
+                  ratings={rating.rate}
+                />
+              </div>
+            </Link>
           )
         )}
       </div>
