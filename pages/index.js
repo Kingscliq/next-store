@@ -14,11 +14,11 @@ import TabGroup from '../components/elements/tab/tab-group';
 import { useGetAllProductsQuery } from '../store/products/products-api';
 import ProductCard from '../components/elements/card/product-card';
 import { ProductSkeleton } from '../components/elements/product-skeleton';
-import Newsletter from '../components/Newsletter';
-import CollectionSlider from '../components/CollectionSlider';
-import Subscribe from '../components/Subscribe';
-import Footer from '../components/Footer';
-import Topnav from '../components/Topnav';
+import Newsletter from '../components/widgets/Newsletter/Newsletter';
+import CollectionSlider from '../components/widgets/collection-slider/CollectionSlider';
+import Subscribe from '../components/widgets/subscribe/Subscribe';
+import Footer from '../components/widgets/footer/Footer';
+import Topnav from '../components/widgets/Top-nav/Topnav';
 import MobileNav from '../components/widgets/mobile-nav';
 
 export default function Home() {

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import collectionStyles from '../styles/CollectionSlider.module.css';
+import collectionStyles from './CollectionSlider.module.css';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -11,9 +11,9 @@ import 'swiper/css/scrollbar';
 import Image from 'next/image';
 // import img1 from '../public/newsletterImg.svg';
 // import Button from '../components/Button';
-import Button from './elements/button/index.js';
-import btnStyles from '../components/button.module.css';
-import newsStyles from '../styles/Newsletter.module.css';
+import Button from '../../elements/button/index.js';
+import btnStyles from '../../elements/button/button.module.css';
+import newsStyles from '../Newsletter/Newsletter.module.css';
 import { FaAngleRight } from "react-icons/fa";
 
 export const getStaticProps = async () => {

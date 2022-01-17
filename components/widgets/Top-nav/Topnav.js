@@ -1,4 +1,4 @@
-import TopnavStyles from '../styles/Topnav.module.css';
+import TopnavStyles from './Topnav.module.css';
 import { FaPhoneAlt } from "react-icons/fa";
 
 const Topnav = () => {

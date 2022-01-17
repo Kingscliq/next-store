@@ -8,9 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@reduxjs/toolkit": "^1.7.1",
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
+    "@reduxjs/toolkit": "^1.7.1",
     "animate.css-react": "^1.1.0",
     "axios": "^0.24.0",
     "formik": "^2.2.9",
