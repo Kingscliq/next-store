@@ -15,6 +15,7 @@ const Shop = () => {
   const addProductToCart = product => {
     dispatch(addToCart(product));
   };
+
   const AllProducts = () => {
     const allProducts = products?.map(
       ({ title, price, description, rating, image, id }) => {
@@ -62,6 +63,7 @@ const Shop = () => {
         );
       });
   };
+
   const FemaleCloth = () => {
     return products
       .filter(product => product.category === "women's clothing")
@@ -83,6 +85,7 @@ const Shop = () => {
         );
       });
   };
+
   const MensCloth = () => {
     return products
       .filter(product => product.category === "men's clothing")
@@ -104,6 +107,7 @@ const Shop = () => {
         );
       });
   };
+
   const Electronics = () => {
     return products
       .filter(product => product.category === 'electronics')

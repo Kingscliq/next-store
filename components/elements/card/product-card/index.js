@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import { Speaker } from '../../../../assets/images';
 import cardStyles from './product-card.module.css';
 import btnStyles from '../../button/button.module.css';
 import Button from '../../button';
@@ -17,7 +16,6 @@ const ProductCard = ({
   handleButtonClick,
   buttonText,
 }) => {
-  const [overlay, setOverlay] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   return (
     <section className={cardStyles.card_container}>

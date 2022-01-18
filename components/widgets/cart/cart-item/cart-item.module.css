@@ -1,0 +1,56 @@
+.cart_item_container {
+  display: grid;
+  grid-template-columns: 20% 50% 20% 10%;
+  grid-gap: 20px;
+  align-items: center;
+  padding: 10px 12px;
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.12),
+    0 0.5px 0.7px rgba(0, 0, 0, 0.12);
+  transition: all 0.5s ease;
+}
+
+.cart_item_container:hover {
+  background-color: var(--grey);
+}
+.quantity_container {
+  width: 100px;
+  border: 0.5px solid rgb(194, 194, 194);
+  display: grid;
+  justify-items: space-between;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+.image {
+  width: 200px;
+  height: auto;
+}
+.qty_btn {
+  background-color: var(--grey);
+  border: none;
+  font-size: 20px;
+  width: 100%;
+  color: rgb(85, 85, 85);
+  cursor: pointer;
+}
+
+.remove_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: tomato;
+  border: none;
+  outline: none;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+.save_btn {
+  background-color: var(--dark);
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.remove_btn:hover {
+  opacity: 0.7;
+}

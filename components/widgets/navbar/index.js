@@ -29,13 +29,13 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
         <div>
           <ul className={navStyles.nav_group}>
             <ListItem href="/" linkText="Home" />
-            <ListItem
+            {/* <ListItem
               href="/categories"
               icon={<IoIosArrowDown />}
               linkText="Categories"
               handleIconClick={() => console.log('Icon Clicked')}
-            />
-            <ListItem href="/products" linkText="Products" />
+            /> */}
+            <ListItem href="/shop" linkText="Shop" />
             <ListItem href="/about" linkText="About" />
           </ul>
         </div>
@@ -59,7 +59,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
           <div>
             <ListItem
               icon={<FaShoppingCart />}
-              href="https://facebook.com"
+              href="/cart"
               badgeLabel={(cartItems.length > 0 && cartItems?.length) || '0'}
             />
           </div>
@@ -67,7 +67,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
         <div className={navStyles.mobile_cart}>
           <ListItem
             icon={<FaShoppingCart />}
-            href="https://facebook.com"
+            href="/cart"
             badgeLabel={(cartItems.length > 0 && cartItems?.length) || '0'}
           />
         </div>
