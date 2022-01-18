@@ -1,0 +1,7 @@
+.cart_container {
+  display: grid;
+  grid-template-columns: 70% 30%;
+  /* justify-items: center; */
+  align-items: start;
+  grid-gap: 50px;
+}

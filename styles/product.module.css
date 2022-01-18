@@ -38,21 +38,3 @@
   font-size: 24px;
   font-weight: 700;
 }
-.quantity_container {
-  width: 100%;
-}
-
-.quantity_container > div {
-  width: 400px;
-  border: 1px solid grey;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.qty_btn {
-  background-color: transparent;
-  border: none;
-  font-size: 30px;
-  padding: 10px;
-}

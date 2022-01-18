@@ -89,7 +89,7 @@ const Product = () => {
             {data && <div>Size: 13</div>}
             {isFetching && <Skeleton width={100} />}
           </div>
-          <div className={[productStyles.quantity_container, 'mb-2'].join(' ')}>
+          {/* <div className={[productStyles.quantity_container, 'mb-2'].join(' ')}>
             {isFetching && <Skeleton width={250} height={40} />}
             {data && (
               <div>
@@ -102,7 +102,7 @@ const Product = () => {
                 </div>
               </div>
             )}
-          </div>
+          </div> */}
           <div className="mb-3">
             {isFetching && <Skeleton width={200} height={60} />}
             {data && (
