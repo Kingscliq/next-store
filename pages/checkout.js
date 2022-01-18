@@ -7,16 +7,58 @@ import btnStyles from '../components/elements/button/button.module.css';
 
 const checkout = () => {
     return (
-        <section>
-            <div className={checkoutStyles.progress}>
-                
+        <section className={checkoutStyles.checkout}>
+            {/* <section className={checkoutStyles.timelineArea}>
+                <div>
+                    <p>
+                        Add to cart
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Shipping and payment
+                    </p>
+                </div>
+
+                <div>
+                    <p>
+                        Done
+                    </p>
+                </div>
+            </section> */}
+
+            <div className={checkoutStyles.wrapper}>
+                <div className={checkoutStyles.timelineArea}>
+                    <div className={checkoutStyles.lineArea}>                        
+                    </div>
+                    <div className={checkoutStyles.singleItem}>
+                        <span>
+                            Add to cart
+                        </span>
+                    </div>
+
+                    <div className={`${checkoutStyles.singleItem} ${checkoutStyles.active}`}>
+                    
+                        <span>
+                            Shipping and payment
+                            {/* className={checkoutStyles.singleItem} */}
+                        </span>
+                    </div>
+
+                    <div className={checkoutStyles.singleItem}>
+                        <span>
+                            Done
+                        </span>
+                    </div>
+                </div>
             </div>
             
 
             <div className={checkoutStyles.containerFlexed}>
                 <div className={checkoutStyles.payment}>
                     <div className={checkoutStyles.paymentMethod}>
-                        <div>
+                        <div  className={checkoutStyles.paymentMethodHeader}>
                             <h1>
                                 Payment Method
                             </h1>
@@ -28,7 +70,7 @@ const checkout = () => {
                             </p>
                         </div>
 
-                        <div>
+                        <div className={checkoutStyles.creditFlexed}>
                             <div>
                                 <div className={checkoutStyles.bigCircle}>
                                     <div className={checkoutStyles.smallCircle}>
@@ -40,17 +82,17 @@ const checkout = () => {
                                 </span>
                             </div>
 
-                            <div>
+                            <div className={checkoutStyles.creditCards}>
                                 <p>
-                                    < FaCcVisa />
+                                    < FaCcVisa className={checkoutStyles.creditIcon}/>
                                 </p>
 
                                 <p>
-                                    < FaCcMastercard />
+                                    < FaCcMastercard className={checkoutStyles.creditIcon}/>
                                 </p>
 
                                 <p>
-                                    < FaCcPaypal />
+                                    < FaCcPaypal className={checkoutStyles.creditIcon}/>
                                 </p>
                             </div>
                         </div>
@@ -138,7 +180,7 @@ const checkout = () => {
                         </div>
                     </div>
 
-                    <div>                    
+                    <div className={checkoutStyles.saveDetails}>                    
                         <input 
                             type="checkbox"                        
                         />    
@@ -149,7 +191,7 @@ const checkout = () => {
 
                     <div>
                         <button
-                            className={btnStyles.payBtn}
+                            className={checkoutStyles.payBtn}
                             onClick={() => alert('Button Clicked')}
                         >
                             Pay now 
@@ -159,30 +201,30 @@ const checkout = () => {
 
                 <div className={checkoutStyles.cartHistory}>
                     <div>
-                        <div>
+                        <div className={checkoutStyles.cartHistoryHeader}>
                             <h3>
                                 Shopping Cart
                             </h3>
                         </div>
 
-                        <div>
-                            <div>
+                        <div className={checkoutStyles.cartOrder}>
+                            <div className={checkoutStyles.cartOrderFlexed}>
                                 <div>
-                                <Image 
-                                    src="/Mac.png" 
-                                    alt="Vercel Logo" 
-                                    width={101} 
-                                    height={101}                        
-                                    quality='100'      
-                                    // className={newsStyles.newsImg}                  
-                                />
+                                    <Image 
+                                        src="/Mac.png" 
+                                        alt="Vercel Logo" 
+                                        width={50} 
+                                        height={50}                        
+                                        quality='100'      
+                                        // className={newsStyles.newsImg}                  
+                                    />
                                 </div>
-                                <div>
+                                <div className={checkoutStyles.cartOrderDetails}>
                                     <p>
                                         Luxury Fashion Necklace Earring 
                                         Bracelet Ring Set Gold Color
                                     </p>
-                                    <p>
+                                    <p className={checkoutStyles.cartPrice}>
                                         Amount:{" "}
                                         <span>
                                             $100
@@ -191,23 +233,23 @@ const checkout = () => {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className={checkoutStyles.cartOrderFlexed}>
                                 <div>
                                     <Image 
                                         src="/Mac.png" 
                                         alt="Vercel Logo" 
-                                        width={101} 
-                                        height={101}                        
+                                        width={50} 
+                                        height={50}                        
                                         quality='100'      
                                         // className={newsStyles.newsImg}                  
                                     />
                                 </div>
-                                <div>
+                                <div className={checkoutStyles.cartOrderDetails}>
                                     <p>
                                         Luxury Fashion Necklace Earring 
                                         Bracelet Ring Set Gold Color
                                     </p>
-                                    <p>
+                                    <p className={checkoutStyles.cartPrice}>
                                         Amount:{" "}
                                         <span>
                                             $100
@@ -216,23 +258,23 @@ const checkout = () => {
                                 </div>
                             </div>
 
-                            <div>
+                            <div className={checkoutStyles.cartOrderFlexed}>
                                 <div>
                                     <Image 
                                         src="/Mac.png" 
                                         alt="Vercel Logo" 
-                                        width={101} 
-                                        height={101}                        
+                                        width={50} 
+                                        height={50}                        
                                         quality='100'      
                                         // className={newsStyles.newsImg}                  
                                     />
                                 </div>
-                                <div>
+                                <div className={checkoutStyles.cartOrderDetails}>
                                     <p>
                                         Luxury Fashion Necklace Earring 
                                         Bracelet Ring Set Gold Color
                                     </p>
-                                    <p>
+                                    <p className={checkoutStyles.cartPrice}>
                                         Amount:{" "}
                                         <span>
                                             $100

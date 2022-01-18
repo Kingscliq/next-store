@@ -12,6 +12,7 @@ const Button = ({
   loading,
   disabled,
   loadingText,
+  style,
 }) => {
   return (
     <button
@@ -23,6 +24,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={loading || disabled}
+      style={style}
     >
       <div className={btnStyle.loading_container}>
         {loading ? (

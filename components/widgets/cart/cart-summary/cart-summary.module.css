@@ -1,0 +1,17 @@
+.subtotals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sub_containers {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+}
+
+.summary_container {
+  padding: 10px 12px;
+  box-shadow: 0 0.5px 0.5px rgba(0, 0, 0, 0.12),
+    0 0.5px 0.7px rgba(0, 0, 0, 0.12);
+}

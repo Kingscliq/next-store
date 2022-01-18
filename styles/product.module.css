@@ -1,0 +1,40 @@
+.product_container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+.ratings {
+  display: flex;
+  align-items: center;
+}
+
+.image_container {
+  position: relative;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image_container:hover {
+  transform: scale(1.02);
+}
+
+.img {
+  /* object-fit: contain;
+  width: 100% !important;
+  height: unset !important;
+  z-index: 5; */
+}
+.title {
+  font-size: 24px;
+}
+.pricing_section {
+  margin: 30px 0px;
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 700;
+}

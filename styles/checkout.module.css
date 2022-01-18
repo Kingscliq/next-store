@@ -1,0 +1,222 @@
+.checkout {
+    padding-bottom: 4rem;
+}
+
+.wrapper {
+    position: relative;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: 145px;
+}
+
+.lineArea {
+    display: block;
+    width: 70%;
+    height: 1px;
+    background: #ddd;
+    position: absolute;
+    top: 50%;
+    left: 15%;
+}
+
+.wrapper .timelineArea {
+    height: 100%;
+}
+
+.singleItem {
+    width: 6%;
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    margin-right: 150px;
+    margin-left: 150px;
+    transition: width .5s;
+    z-index: 1;
+}
+
+.singleItem > span {
+    height: 32px;
+    display: block;
+    font-weight: bold;
+    position: absolute;
+    top: 58%;
+    margin-top: -18px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.singleItem > span:first-child::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: #1696F2;
+    margin: 0 auto 8px auto;
+    border-radius: 50%;
+}
+
+.singleItem > .active:before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: #1696F2;
+    margin: 0 auto 8px auto;
+    border-radius: 50%;
+    border: 1px solid #334;
+}
+
+.singleItem > span:first-child {
+    color: #1696F2;
+}
+
+.containerFlexed {
+    display: grid;
+    grid-template-columns: 2fr 1.4fr;
+    grid-gap: 2rem;
+    margin-top: 5rem;
+    padding: 0 3rem;
+}
+
+.payment {
+    margin-left: 3rem;
+    max-width: 500px;
+}
+
+.paymentMethodHeader h1 {
+    font-size: 2.3rem;
+    font-weight: 300;
+}
+
+.paymentMethodHeader p {
+    margin-top: 1rem;
+}
+
+.totalPrice {
+    padding-left: 1rem;
+}
+
+.creditFlexed {
+    display: flex;
+    /* justify-content: space-between; */
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.creditCards {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+    font-size: 36px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    color: #0584F9;
+}
+
+.creditIcon {
+    margin-right: 1rem;
+}
+
+
+/* checkout form */
+.payment form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+
+.payment form div {
+    margin-top: 1rem;
+}
+
+.payment form input {
+    width: 100%;
+    padding: 15px;
+}
+
+.month, .year {
+    padding: 14px;
+}
+
+.cart {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cart label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.cart input {
+    padding: 15px;
+}
+
+.cart div {
+    margin-top: 1rem;
+}
+
+.month {
+    margin-right: 10px;
+}
+
+.saveDetails {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.saveDetails span {
+    padding-left: 10px;
+}
+
+.payBtn {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #0584F9;
+    border: none;
+    color: #fff;
+}
+
+.cartHistory {
+    margin-right: 3rem;
+    
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cartHistoryHeader h3 {
+    background: #FFFFFF;
+    border: 1px solid rgba(18, 18, 18, 0.1);
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 1rem 1rem;
+    margin-bottom: 2rem;
+}
+
+.cartOrder {
+    padding: 10px;
+}
+
+.cartOrderFlexed {
+    display: flex;
+    margin-bottom: 2rem;
+}
+
+.cartOrderDetails {
+    padding-left: 1rem;
+    font-size: 14px;
+}
+
+.cartPrice {
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}

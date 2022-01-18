@@ -1,7 +1,7 @@
 .tab_container {
   list-style-type: none;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   background-color: var(--grey);
 }
 
@@ -24,6 +24,7 @@
   color: var(--light);
   flex-direction: column;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .tab_item:hover {

@@ -13,19 +13,17 @@ const ListItem = ({
   handleIconClick,
 }) => {
   return (
-    <li
-      className={[listStyles.nav_links, `${className}`].join(' ')}
-      onClick={onClick}
-    >
-      {linkText && (
-        <div className={listStyles.link_text}>
-          <Link href={href}>
+    <Link href={href}>
+      <li
+        className={[listStyles.nav_links, `${className}`].join(' ')}
+        onClick={onClick}
+      >
+        {linkText && (
+          <div className={listStyles.link_text}>
             <a>{linkText}</a>
-          </Link>
-        </div>
-      )}
-      {icon && (
-        <Link href={href}>
+          </div>
+        )}
+        {icon && (
           <>
             <div className={listStyles.link_icon_container}>
               {badgeLabel && (
@@ -38,9 +36,9 @@ const ListItem = ({
               </div>
             </div>
           </>
-        </Link>
-      )}
-    </li>
+        )}
+      </li>
+    </Link>
   );
 };
 
