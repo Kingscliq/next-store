@@ -33,23 +33,23 @@ const checkout = () => {
                     <div className={checkoutStyles.lineArea}>                        
                     </div>
                     <div className={checkoutStyles.singleItem}>
-                        <span>
+                        <p className={checkoutStyles.firstCircle}>
                             Add to cart
-                        </span>
+                        </p>
                     </div>
 
                     <div className={`${checkoutStyles.singleItem} ${checkoutStyles.active}`}>
                     
-                        <span>
+                        <p className={checkoutStyles.secondCircle}>
                             Shipping and payment
                             {/* className={checkoutStyles.singleItem} */}
-                        </span>
+                        </p>
                     </div>
 
                     <div className={checkoutStyles.singleItem}>
-                        <span>
+                        <p className={checkoutStyles.thirdCircle}>
                             Done
-                        </span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@ const checkout = () => {
                         </div>
 
                         <div className={checkoutStyles.creditFlexed}>
-                            <div>
+                            <div className={checkoutStyles.circleFlexed}>
                                 <div className={checkoutStyles.bigCircle}>
                                     <div className={checkoutStyles.smallCircle}>
 
