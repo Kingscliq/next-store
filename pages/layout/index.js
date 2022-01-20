@@ -1,5 +1,5 @@
 import React, { Children } from 'react';
-import Topnav from '../../components/Topnav';
+import Topnav from '../../components/widgets/Top-nav/Topnav';
 import MobileNav from '../../components/widgets/mobile-nav';
 import Navbar from '../../components/widgets/navbar';
 
@@ -13,7 +13,9 @@ const Layout = ({ children }) => {
   console.log(cartItems);
   return (
     <>
-      <Topnav />
+      {/* < Topnav /> */}
+
+      < Topnav /> 
       {mobileNav && <MobileNav setMobileNav={setMobileNav} />}
       <Navbar
         mobileNav={mobileNav}

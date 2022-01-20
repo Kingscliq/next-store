@@ -2,8 +2,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
-    padding: 0.7rem 2rem;
+    font-size: 10px;
+    padding: 8px;
 }
 
 .containerSpan {

@@ -7,10 +7,10 @@ import CategriesCard from '../components/elements/card/categories-card';
 import { useGetAllProductsQuery } from '../store/products/products-api';
 import ProductCard from '../components/elements/card/product-card';
 import { ProductSkeleton } from '../components/elements/product-skeleton';
-import Newsletter from '../components/Newsletter';
-import CollectionSlider from '../components/CollectionSlider';
-import Subscribe from '../components/Subscribe';
-import Footer from '../components/Footer';
+import Newsletter from '../components/widgets/Newsletter/Newsletter';
+import CollectionSlider from '../components/widgets/collection-slider/CollectionSlider';
+import Subscribe from '../components/widgets/subscribe/Subscribe';
+import Footer from '../components/widgets/footer/Footer';
 import Link from 'next/link';
 
 export default function Home() {
