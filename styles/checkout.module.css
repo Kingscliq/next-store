@@ -365,18 +365,18 @@
     }
 
     .singleItem {
-        width: 8%;
+        width: 12%;
         margin-right: 55px;
         margin-left: 55px;        
     }
 
     .singleItem > p {        
-        font-size: 8px;
+        font-size: 10px;
     }
 
     .containerFlexed {
-        grid-gap: 1rem;        
-        padding: 0 1rem;
+        grid-gap: 2rem;        
+        padding: 0 4rem;
     }
 
     .payment{

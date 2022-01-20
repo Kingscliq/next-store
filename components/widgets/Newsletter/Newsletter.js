@@ -4,7 +4,7 @@ import btnStyles from '../../elements/button/button.module.css';
 import Image from 'next/image';
 import { FaAngleRight } from "react-icons/fa";
 
-const Newsletter = () => {
+const Newsletter = () => { 
     return (
         <section className={newsStyles.newsletter}>
             <div className={newsStyles.container}>

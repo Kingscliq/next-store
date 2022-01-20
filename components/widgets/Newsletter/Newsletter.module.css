@@ -8,7 +8,6 @@
 .container {
     display: flex;
     justify-content: space-between;
-    /* padding: 2rem; */
 }
 
 .newsletterImg {
@@ -27,7 +26,7 @@
 }
 
 .content {
-    padding: 2rem;
+    padding: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -61,11 +60,15 @@
     .container {
         display: block;
     }
-
-    .newsletterImg {
-        text-align: center;
-    }
     
+    .content h3 {
+        font-size: 2.1rem;
+        margin: 1rem 0;
+    }
+
+    .content {
+        padding: 2rem;        
+    }
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

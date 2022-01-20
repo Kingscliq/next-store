@@ -1,6 +1,6 @@
 import subscribeStyles from './Subscribe.module.css';
 import { FaAngleRight } from "react-icons/fa"; 
-
+ 
 const Subscribe = () => {
     return (
         <section className={subscribeStyles.container}>
