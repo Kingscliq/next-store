@@ -57,6 +57,26 @@ const initialState = {
         }
         toast.info('Item quantity Increased');
       },
+      getTotals(state, action) {
+        let { total, quantity } = state.cartItems.reduce(
+          (cartTotal, cartItem) => {
+            const { price, quantity: itemQuantity } = cartItem;
+            const itemTotal = price * itemQuantity;
+
+            cartTotal.total += itemTotal;
+            cartTotal.quantity += itemQuantity;
+
+            return cartTotal;
+          },
+          {
+            total: 0,
+            quantity: 0,
+          }
+        );
+
+        state.totalCartItemsQuantity = quantity;
+        state.totalPrice = total;
+      },
     },
   });
 
@@ -65,6 +85,10 @@ export const {
   removeItemFromCart,
   increaseCartQuantity,
   decreaseCartQuantity,
+  getTotals,
 } = cartSlice.actions;
 export const cart = state => state.cart.cartItems;
+export const totalPrice = state => state.cart.totalPrice;
+export const totalCartItemsQuantity = state =>
+  state.cart.totalCartItemsQuantity;
 export default cartSlice.reducer;
