@@ -117,18 +117,7 @@ const checkout = () => {
                                     placeholder="The card number"
                                 />
                             </div>
-
-                            <div>
-                                <div>
-                                    <label>
-                                        Card number
-                                    </label>
-                                    <input 
-                                        type="text"
-                                        placeholder="The card number"
-                                    />
-                                </div>
-                            </div>
+                
                         </form>
                     </div>
 

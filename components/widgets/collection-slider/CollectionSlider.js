@@ -20,7 +20,7 @@ export const getStaticProps = async () => {
     const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
     const data = await res.json();
 
-    console.log("articlesss: ", data)
+    console.log("articlesss: ", data) 
 
     return {
       props: {
@@ -61,8 +61,8 @@ const CollectionSlider = ({ninjas}) => {
                       "spaceBetween": 10
                     }
                 }} 
-                // navigation
-                // pagination={{ clickable: true }}
+                navigation
+                pagination={{ clickable: true }}
                 scrollbar={{ draggable: true }}
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}

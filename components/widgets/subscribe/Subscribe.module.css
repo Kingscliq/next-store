@@ -10,9 +10,10 @@
 }
 
 .flexed1 p {
-    font-size: 14px;
+    font-size: 14px; 
     color: #FFFFFF;
     margin-top: 0.8rem;
+    padding-right: 1rem;
 }
 
 .containerFlex {
@@ -26,6 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-left: 1rem;
 }
 
 .flexed2 form input {
@@ -34,6 +36,7 @@
     color: #FFFFFF;
     outline: #333344;
     border: none;
+    border-radius: 20px;
 }
 
 .flexed2 form input::placeholder {
@@ -45,11 +48,12 @@
 }
 
 .icon {
-    position: absolute;
-    top: 40%;
+    position: absolute;    
+    top: 33%;
     right: 2%;
-    /* display: inline; */
-    /* display: inline; */
+    border-radius: 50%;
+    padding: 6px;
+    border: none;
     color: #334;
     cursor: pointer;
 }
@@ -57,6 +61,20 @@
 @media only screen and (max-width: 928px) {
     .containerFlex {
         display: block;        
+    }
+
+    .flexed2 {
+        margin-top: 2rem;        
+        display: block;        
+        padding-left: 0rem;
+    }
+
+    .icon {
+        top: 4px;
+        left: 217px;
+        border-radius: 50%;
+        padding: 6px;
+        border: none;
     }
     
 }
