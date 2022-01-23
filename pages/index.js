@@ -16,7 +16,7 @@ import Link from 'next/link';
 export default function Home() {
   const { data: products, isLoading } = useGetAllProductsQuery();
 
-  const electronicProducts = products?.filter(
+  const highestRatedProducts = products?.filter(
     product => product.rating.rate > 4
   );
   return (
@@ -29,24 +29,27 @@ export default function Home() {
 
       <main className={styles.main}>
         <HomepageShowcase />
-        <section
-          className={`${styles.container} ${styles.home_categries_section}`}
-        >
-          <div className={styles.home_categries_section_div}>
-            <CategriesCard
-              imgSrc="/Mac.png"
-              imgAlt="mac picture"
-              categoryHeading="ELECTRONICS"
-            />
-          </div>
 
-          <div className={styles.home_categries_section_div}>
-            <CategriesCard
-              imgSrc="/Mac.png"
-              imgAlt="mac picture"
-              categoryHeading="CLOTHING"
-            />
-          </div>
+        <section className={[styles.card_containers, 'mb-3'].join(' ')}>
+          <section
+            className={[styles.home_categries_section, 'container'].join(' ')}
+          >
+            <div className={styles.home_categries_section_div}>
+              <CategriesCard
+                imgSrc="/Mac.png"
+                imgAlt="mac picture"
+                categoryHeading="ELECTRONICS"
+              />
+            </div>
+
+            <div className={styles.home_categries_section_div}>
+              <CategriesCard
+                imgSrc="/Mac.png"
+                imgAlt="mac picture"
+                categoryHeading="CLOTHING"
+              />
+            </div>
+          </section>
         </section>
       </main>
       <div className="container">
@@ -54,7 +57,7 @@ export default function Home() {
       </div>
       {isLoading && <ProductSkeleton />}
       <div className="category-section container">
-        {electronicProducts?.map(
+        {highestRatedProducts?.map(
           ({ title, price, image, description, rating, id }) => (
             <Link href={`/shop/products/${id}`}>
               <div>

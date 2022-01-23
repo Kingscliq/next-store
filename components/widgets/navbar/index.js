@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import navStyles from './navbar.module.css';
 import {
   FaBars,
@@ -8,14 +8,22 @@ import {
   FaShoppingCart,
   FaUserAlt,
 } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
-import { IoIosArrowDown } from 'react-icons/io';
+import { useSelector, useDispatch } from 'react-redux';
 import ListItem from '../../elements/list-item';
-import { cart, totalCartItemsQuantity } from '../../../store/cart/cart-slice';
+import {
+  cart,
+  totalCartItemsQuantity,
+  getTotals,
+} from '../../../store/cart/cart-slice';
 
 const Navbar = ({ mobileNav, setMobileNav }) => {
   const cartItems = useSelector(cart);
   const totalQuantity = useSelector(totalCartItemsQuantity);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart]);
+
   return (
     <section className={navStyles.navbar}>
       <nav className={[navStyles.main_nav, 'container'].join(' ')}>

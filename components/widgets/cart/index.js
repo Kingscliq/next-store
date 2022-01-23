@@ -13,7 +13,7 @@ const Cart = () => {
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [cart]);
+  }, [shoppingCart]);
 
   return shoppingCart.length > 0 ? (
     <>
