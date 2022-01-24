@@ -19,7 +19,7 @@ export default function Home() {
   const electronicProducts = products?.filter(
     product => product.rating.rate > 4
   );
-  return (
+  return ( 
     <div>
       <Head>
         <title>Create Next App</title>

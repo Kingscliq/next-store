@@ -12,13 +12,13 @@
 }
 
 .slides {
-    height: auto;
-    /* width: 900px; */
-    background: #FFFBFB;
-    display: flex;
-    justify-content: space-between;
+    height: auto;    
+    background: #FFFBFB;    
+    display: grid;    
     margin-right: 3rem;
     padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
 }
 
 
@@ -35,11 +35,9 @@
     padding-right: 2rem;
 }
 
-
-
 .slidesContent h3 {
-    font-size: 2.1rem;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .productDescription {
@@ -62,6 +60,7 @@
 
 .imgs {
     position: relative;
+    text-align: center;
 }
 
 .imgDetails {

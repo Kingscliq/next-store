@@ -14,7 +14,7 @@ export const productsApi = createApi({
       query: category => `products/category/${category}`,
     }),
   }),
-});
+}); 
 
 export const {
   useGetAllProductsQuery,

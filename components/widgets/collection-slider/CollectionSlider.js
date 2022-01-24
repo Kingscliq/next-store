@@ -10,29 +10,24 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import Image from 'next/image';
 // import img1 from '../public/newsletterImg.svg';
-// import Button from '../components/Button';
+// import Button from '../components/Button'; 
 import Button from '../../elements/button/index.js';
 import btnStyles from '../../elements/button/button.module.css';
 import newsStyles from '../Newsletter/Newsletter.module.css';
 import { FaAngleRight } from "react-icons/fa";
+import { useGetAllProductsQuery } from '../../../store/products/products-api';
 
-export const getStaticProps = async () => {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/users`);
-    const data = await res.json();
 
-    console.log("articlesss: ", data) 
+const CollectionSlider = () => {
+    // useGetAllProductsQuery()
+    const { data: products, isLoading } = useGetAllProductsQuery();
 
-    return {
-      props: {
-        ninjas: data
-      }
-    }
-}
+    console.log("prod:", products);
 
-const CollectionSlider = ({ninjas}) => {
-
-    console.log("articles", ninjas);
-
+    const highestPricedProducts = products?.filter(
+        product => product.price > 150
+    );
+    console.log("hi", highestPricedProducts)
     return (
         <section className={collectionStyles.container}>
             <p className={collectionStyles.containerHeader}>
@@ -68,279 +63,73 @@ const CollectionSlider = ({ninjas}) => {
                 onSlideChange={() => console.log('slide change')}
             >
                 
-            <SwiperSlide>
-                <div className={collectionStyles.slides}>
-                    <div className={collectionStyles.slidesContent}>
-                        <div>
-                            <h3>
-                                Pallazo trouser- animal skin
-                            </h3>
-
-                            <p className={collectionStyles.productDescription}>
-                                Take on any task or work function in
-                                any of our range of Women's clothing
-                            </p>
-
+            {highestPricedProducts?.map(product => (
+                <SwiperSlide key={product.id}>
+                    <div className={collectionStyles.slides}>
+                        <div className={collectionStyles.slidesContent}>
                             <div>
-                                <div className={collectionStyles.productPrice}>
-                                    <p>
-                                        Price: {" "}
-                                        <span className={collectionStyles.price}>
-                                            $304
-                                        </span>
-                                    </p>
-                                    
-                                    <p>
-                                        Size: {" "}
-                                        <span className={collectionStyles.size}>
-                                            32 Inch
-                                        </span>
-                                    </p>
-                                </div>
+                                <h3>
+                                    {product.title}
+                                </h3>
 
-                            
-                                <div className={newsStyles.imgContainer}>
-                                    
-                                    <button
-                                        className={btnStyles.btn_darke}
-                                        onClick={() => alert('Button Clicked')}
-                                    >
-                                        Buy now 
-                                    </button>
+                                <p className={collectionStyles.productDescription}>
+                                    {product.description}
+                                </p>
 
-                                    <div className={collectionStyles.imgDetails}>
-                                        < FaAngleRight />
+                                <div>
+                                    <div className={collectionStyles.productPrice}>
+                                        <p>
+                                            Price: {" "}
+                                            <span className={collectionStyles.price}>
+                                                {product.price}
+                                            </span>
+                                        </p>
+                                        
+                                        <p>
+                                            Rating: {" "}
+                                            <span className={collectionStyles.size}>
+                                                {product.rating.rate}
+                                            </span>
+                                        </p>
                                     </div>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                
+                                    <div className={newsStyles.imgContainer}>
+                                        
+                                        <button
+                                            className={btnStyles.btn_darke}
+                                            onClick={() => alert('Button Clicked')}
+                                        >
+                                            Buy now 
+                                        </button>
 
-                    <div className={collectionStyles.imgs}>
-                        <Image 
-                            src="/sliderImg.svg" 
-                            alt="Vercel Logo" 
-                            width={331} 
-                            height={428}     
-                            // layout= "fill"                   
-                            quality='100'      
-                            className={collectionStyles.Imgslides}                  
-                        />
+                                        <div className={collectionStyles.imgDetails}>
+                                            < FaAngleRight />
+                                        </div>
 
-                        <div className={collectionStyles.Imgslidess}  >
-
-                        </div>
-                        
-                    </div>                    
-                </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-                <div className={collectionStyles.slides}>
-                <div className={collectionStyles.slidesContent}>
-                        <div>
-                            <h3>
-                                Pallazo trouser- animal skin
-                            </h3>
-
-                            <p className={collectionStyles.productDescription}>
-                                Take on any task or work function in
-                                any of our range of Women's clothing
-                            </p>
-
-                            <div>
-                                <div className={collectionStyles.productPrice}>
-                                    <p>
-                                        Price: {" "}
-                                        <span className={collectionStyles.price}>
-                                            $304
-                                        </span>
-                                    </p>
-                                    
-                                    <p>
-                                        Size: {" "}
-                                        <span className={collectionStyles.size}>
-                                            32 Inch
-                                        </span>
-                                    </p>
-                                </div>
-
-                            
-                                <div className={newsStyles.imgContainer}>
-                                    <button
-                                        className={btnStyles.btn_darke}
-                                        onClick={() => alert('Button Clicked')}
-                                    >
-                                        Buy now 
-                                    </button>
-
-                                    <div className={collectionStyles.imgDetails}>
-                                        < FaAngleRight />
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <div className={collectionStyles.imgs}>
+                            <Image 
+                                src={product.image} 
+                                alt="Vercel Logo" 
+                                width={231} 
+                                height={328}     
+                                // layout= "fill"                   
+                                quality='100'      
+                                className={collectionStyles.Imgslides}                  
+                            />           
+                        </div>                    
                     </div>
-
-
-                    <div className={collectionStyles.imgs}>
-                        <Image 
-                            src="/sliderImg.svg" 
-                            alt="Vercel Logo" 
-                            width={331} 
-                            height={428}     
-                            // layout= "fill"                   
-                            quality='100'      
-                            className={collectionStyles.Imgslides}                  
-                        />
-                        {/* 
-                        <img
-                            src="/public/newsletterImg.svg"
-                            alt="dev"
-                        /> */}
-                    </div> 
 
                     
-                </div>
-            </SwiperSlide>
+                </SwiperSlide>
+            ))}
 
-            <SwiperSlide>
-                <div className={collectionStyles.slides}>
-                    <div className={collectionStyles.slidesContent}>
-                        <div>
-                            <h3>
-                                Pallazo trouser- animal skin
-                            </h3>
-
-                            <p className={collectionStyles.productDescription}>
-                                Take on any task or work function in
-                                any of our range of Women's clothing
-                            </p>
-
-                            <div>
-                                <div className={collectionStyles.productPrice}>
-                                    <p>
-                                        Price: {" "}
-                                        <span className={collectionStyles.price}>
-                                            $304
-                                        </span>
-                                    </p>
-                                    
-                                    <p>
-                                        Size: {" "}
-                                        <span className={collectionStyles.size}>
-                                            32 Inch
-                                        </span>
-                                    </p>
-                                </div>
-
-                            
-                                <div className={newsStyles.imgContainer}>
-                                    <button
-                                        className={btnStyles.btn_darke}
-                                        onClick={() => alert('Button Clicked')}
-                                    >
-                                        Buy now 
-                                    </button>
-
-                                    <div className={collectionStyles.imgDetails}>
-                                        < FaAngleRight />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div className={collectionStyles.imgs}>
-                        <Image 
-                            src="/sliderImg.svg" 
-                            alt="Vercel Logo" 
-                            width={331} 
-                            height={428}     
-                            // layout= "fill"                   
-                            quality='100'      
-                            className={collectionStyles.Imgslides}                  
-                        />
-                        {/* 
-                        <img
-                            src="/public/newsletterImg.svg"
-                            alt="dev"
-                        /> */}
-                    </div> 
-   
-                </div>
-            </SwiperSlide>
-            
-            <SwiperSlide>
-                <div className={collectionStyles.slides}>
-                    <div className={collectionStyles.slidesContent}>
-                        <div>
-                            <h3>
-                                Pallazo trouser- animal skin
-                            </h3>
-
-                            <p className={collectionStyles.productDescription}>
-                                Take on any task or work function in
-                                any of our range of Women's clothing
-                            </p>
-
-                            <div>
-                                <div className={collectionStyles.productPrice}>
-                                    <p>
-                                        Price: {" "}
-                                        <span className={collectionStyles.price}>
-                                            $304
-                                        </span>
-                                    </p>
-                                    
-                                    <p>
-                                        Size: {" "}
-                                        <span className={collectionStyles.size}>
-                                            32 Inch
-                                        </span>
-                                    </p>
-                                </div>
-
-                            
-                                <div className={newsStyles.imgContainer}>
-                                    <button
-                                        className={btnStyles.btn_darke}
-                                        onClick={() => alert('Button Clicked')}
-                                    >
-                                        Buy now 
-                                    </button>
-
-                                    <div className={collectionStyles.imgDetails}>
-                                        < FaAngleRight />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div className={collectionStyles.imgs}>
-                        <Image 
-                            src="/sliderImg.svg" 
-                            alt="Vercel Logo" 
-                            width={331} 
-                            height={428}     
-                            // layout= "fill"                   
-                            quality='100'      
-                            className={collectionStyles.Imgslides}                  
-                        />
-                        {/* 
-                        <img
-                            src="/public/newsletterImg.svg"
-                            alt="dev"
-                        /> */}
-                    </div> 
-
-                    
-                </div>
-            </SwiperSlide>
+           
 
                
             </Swiper>
