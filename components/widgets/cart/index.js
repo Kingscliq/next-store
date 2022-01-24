@@ -7,7 +7,7 @@ import CartSummary from './cart-summary';
 
 import styles from './cart.module.css';
 
-const Cart = () => {
+const Cart = () => { 
   const shoppingCart = useSelector(cart);
 
   console.log(shoppingCart);

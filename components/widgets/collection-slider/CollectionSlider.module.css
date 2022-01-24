@@ -61,6 +61,8 @@
 .imgs {
     position: relative;
     text-align: center;
+    border: 1px solid #334;
+    padding: 1rem;
 }
 
 .imgDetails {
@@ -70,23 +72,15 @@
     color: #000;
 }
 
-.swiper-button-next:after, .swiper-button-prev:after {
-    font-family: swiper-icons;
-    font-size: var(--swiper-navigation-size);
-    text-transform: none!important;
-    letter-spacing: 0;
-    text-transform: none;
-    -moz-font-feature-settings: normal,;
-    font-feature-settings: normal,;
-    font-variant: normal;
-    font-variant: initial;
-    line-height: 1;
-    font-size: 14px;
-    color: #fff;
-    font-weight: bold;
+.swiper-button-next, .swiper-button-prev, .swiper-button-disabled {
+    right: 10px;
+    left: auto;
     background: #334;
+    color: #fff;
+    font-size: 0rem;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    padding: 10px;
 }
  
 .productPrice span {

@@ -16,6 +16,7 @@ import btnStyles from '../../elements/button/button.module.css';
 import newsStyles from '../Newsletter/Newsletter.module.css';
 import { FaAngleRight } from "react-icons/fa";
 import { useGetAllProductsQuery } from '../../../store/products/products-api';
+import { ProductSkeleton } from '../../elements/product-skeleton';
 
 
 const CollectionSlider = () => {
@@ -62,7 +63,7 @@ const CollectionSlider = () => {
                 onSwiper={(swiper) => console.log(swiper)}
                 onSlideChange={() => console.log('slide change')}
             >
-                
+                {isLoading && <ProductSkeleton />}
             {highestPricedProducts?.map(product => (
                 <SwiperSlide key={product.id}>
                     <div className={collectionStyles.slides}>
@@ -88,7 +89,7 @@ const CollectionSlider = () => {
                                         <p>
                                             Rating: {" "}
                                             <span className={collectionStyles.size}>
-                                                {product.rating.rate}
+                                                {product.rating.rate}/5
                                             </span>
                                         </p>
                                     </div>
