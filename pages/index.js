@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next/head'; 
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 import Button from '../components/elements/Button';
