@@ -1,4 +1,4 @@
-import Head from 'next/head';
+import Head from 'next/head'; 
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
 import Button from '../components/elements/Button';
@@ -19,7 +19,7 @@ export default function Home() {
   const highestRatedProducts = products?.filter(
     product => product.rating.rate > 4
   );
-  return (
+  return ( 
     <div>
       <Head>
         <title>Create Next App</title>

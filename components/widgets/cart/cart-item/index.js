@@ -21,7 +21,7 @@ const CartItem = ({ product }) => {
     dispatch(increaseCartQuantity(item));
   };
 
-  const decreaseProductQuantity = item => {
+  const decreaseProductQuantity = item => { 
     dispatch(decreaseCartQuantity(item));
   };
   return (

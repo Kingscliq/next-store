@@ -9,7 +9,7 @@ const RelatedProducts = ({ products, isFetching, error }) => {
   const dispatch = useDispatch();
   const handleAddToCart = item => {
     dispatch(addToCart(item));
-  };
+  }; 
 
   return (
     <>
