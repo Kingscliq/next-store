@@ -30,8 +30,6 @@ const Product = () => {
     error: loadingError,
   } = useGetProductsByCategoryQuery(category);
 
-  console.log(data?.category);
-
   return (
     <>
       <section
@@ -89,20 +87,6 @@ const Product = () => {
             {data && <div>Size: 13</div>}
             {isFetching && <Skeleton width={100} />}
           </div>
-          {/* <div className={[productStyles.quantity_container, 'mb-2'].join(' ')}>
-            {isFetching && <Skeleton width={250} height={40} />}
-            {data && (
-              <div>
-                <div>
-                  <button className={productStyles.qty_btn}>-</button>
-                </div>
-                <div>1</div>
-                <div>
-                  <button className={productStyles.qty_btn}>+</button>
-                </div>
-              </div>
-            )}
-          </div> */}
           <div className="mb-3">
             {isFetching && <Skeleton width={200} height={60} />}
             {data && (

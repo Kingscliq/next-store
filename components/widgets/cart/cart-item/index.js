@@ -16,7 +16,7 @@ const CartItem = ({ product }) => {
 
   const deleteFromCart = product => {
     dispatch(removeItemFromCart(product));
-  };
+  }; 
   const increaseProductQuantity = item => {
     dispatch(increaseCartQuantity(item));
   };
@@ -42,7 +42,10 @@ const CartItem = ({ product }) => {
           edit={false}
         />
         <div>
-          <Button label={`Save For Later`} className={cartStyles.save_btn} />
+          <Button 
+            label={`Save For Later`} 
+            className={cartStyles.save_btn} 
+          />
         </div>
       </div>
       <div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import navStyles from './navbar.module.css';
 import {
   FaBars,
@@ -8,15 +8,22 @@ import {
   FaShoppingCart,
   FaUserAlt,
 } from 'react-icons/fa';
-import { useSelector } from 'react-redux';
-import { IoIosArrowDown } from 'react-icons/io';
+import { useSelector, useDispatch } from 'react-redux';
 import ListItem from '../../elements/list-item';
-import { cart } from '../../../store/cart/cart-slice';
+import {
+  cart,
+  totalCartItemsQuantity,
+  getTotals,
+} from '../../../store/cart/cart-slice';
 
 const Navbar = ({ mobileNav, setMobileNav }) => {
   const cartItems = useSelector(cart);
+  const totalQuantity = useSelector(totalCartItemsQuantity);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [cart]);
 
-  console.log(cartItems);
   return (
     <section className={navStyles.navbar}>
       <nav className={[navStyles.main_nav, 'container'].join(' ')}>
@@ -29,12 +36,6 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
         <div>
           <ul className={navStyles.nav_group}>
             <ListItem href="/" linkText="Home" />
-            {/* <ListItem
-              href="/categories"
-              icon={<IoIosArrowDown />}
-              linkText="Categories"
-              handleIconClick={() => console.log('Icon Clicked')}
-            /> */}
             <ListItem href="/shop" linkText="Shop" />
             <ListItem href="/about" linkText="About" />
           </ul>
@@ -60,7 +61,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
             <ListItem
               icon={<FaShoppingCart />}
               href="/cart"
-              badgeLabel={(cartItems.length > 0 && cartItems?.length) || '0'}
+              badgeLabel={(totalQuantity > 0 && totalQuantity) || null}
             />
           </div>
         </div>
@@ -68,7 +69,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
           <ListItem
             icon={<FaShoppingCart />}
             href="/cart"
-            badgeLabel={(cartItems.length > 0 && cartItems?.length) || '0'}
+            badgeLabel={(totalQuantity > 0 && totalQuantity) || null}
           />
         </div>
       </nav>

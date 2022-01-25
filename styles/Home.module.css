@@ -119,6 +119,11 @@
   width: 48%;
 }
 
+.card_containers {
+  background-color: var(--grey);
+  width: 100%;
+}
+
 @media (max-width: 768px) {
   .home_categries_section .home_categries_section_div {
     width: 100%;

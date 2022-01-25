@@ -1,6 +1,6 @@
-import React from 'react';
-import { cart } from '../../../store/cart/cart-slice';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { cart, getTotals } from '../../../store/cart/cart-slice';
+import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './cart-item';
 import EmptyCart from '../empty-cart';
 import CartSummary from './cart-summary';
@@ -9,8 +9,12 @@ import styles from './cart.module.css';
 
 const Cart = () => { 
   const shoppingCart = useSelector(cart);
+  const dispatch = useDispatch();
 
-  console.log(shoppingCart);
+  useEffect(() => {
+    dispatch(getTotals());
+  }, [shoppingCart]); 
+
   return shoppingCart.length > 0 ? (
     <>
       <h2 className="container mt-4">Cart</h2>
