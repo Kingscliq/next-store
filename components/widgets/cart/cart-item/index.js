@@ -11,6 +11,8 @@ import {
 import ReactStars from 'react-rating-stars-component';
 import { checkRatings } from '../../../../utils/check-ratings';
 import Button from '../../../elements/button';
+import { addToWishlist } from '../../../../store/wishlist/wishlist-slice';
+
 const CartItem = ({ product }) => {
   const dispatch = useDispatch();
 
@@ -24,6 +26,11 @@ const CartItem = ({ product }) => {
   const decreaseProductQuantity = item => { 
     dispatch(decreaseCartQuantity(item));
   };
+
+  const handleAddToWishlist = product => {
+    dispatch(addToWishlist(product));
+  };
+
   return (
     <section className={[cartStyles.cart_item_container].join(' ')}>
       <div className={cartStyles.image}>
@@ -45,6 +52,7 @@ const CartItem = ({ product }) => {
           <Button 
             label={`Save For Later`} 
             className={cartStyles.save_btn} 
+            onClick={() => handleAddToWishlist(product)}
           />
         </div>
       </div>

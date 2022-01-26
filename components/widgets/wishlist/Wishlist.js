@@ -1,16 +1,21 @@
 import cartStyles from './wishlist.module.css';
 import Image from 'next/image';
-import{ wishlist } from '../../../store/wishlist/wishlist-slice';
+import{ removeItemFromWishlist, wishlist } from '../../../store/wishlist/wishlist-slice';
 import { useSelector } from 'react-redux';
 import ReactStars from 'react-rating-stars-component';
 import Button from '../../elements/button';
 import { FaHeart, FaRegTimesCircle } from 'react-icons/fa';
 import EmptyCart from '../empty-wishlist';
+import { checkRatings } from '../../../utils/check-ratings';
+import { useDispatch } from 'react-redux';
 
 const Wishlist = () => {
+    const dispatch = useDispatch();
     const wishlistCart = useSelector(wishlist);
 
-    console.log(wishlistCart)
+    const handleAddRemoveFromWishlist = product => {
+        dispatch(removeItemFromWishlist(product));
+    };
     
     return wishlistCart.length > 0 ? ( 
         <>
@@ -34,15 +39,13 @@ const Wishlist = () => {
                                 value={checkRatings(product.rating.rate)}
                                 edit={false}
                             />
-                            <div>
-                                <Button label={`Save For Later`} className={cartStyles.save_btn} />
-                            </div>
+                            
                         </div>
                         
                         <div>
                         <button
                             className={cartStyles.remove_btn}
-                            onClick={() => removeItemFromWishlist(product)}
+                            onClick={() => handleAddRemoveFromWishlist(product)}
                         >
                             <FaRegTimesCircle size={25} />
                         </button>
