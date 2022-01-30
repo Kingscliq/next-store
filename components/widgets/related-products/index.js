@@ -9,7 +9,7 @@ const RelatedProducts = ({ products, isFetching, error }) => {
   const dispatch = useDispatch();
   const handleAddToCart = item => {
     dispatch(addToCart(item));
-  }; 
+  };
 
   return (
     <>
@@ -17,7 +17,7 @@ const RelatedProducts = ({ products, isFetching, error }) => {
       <div className="category-section container">
         {products &&
           products.map(product => (
-            <Link href={`/shop/products/${product.id}`}>
+            <Link href={`/shop/products/${product.id}`} key={product.id}>
               <div>
                 <ProductCard
                   title={product.title}

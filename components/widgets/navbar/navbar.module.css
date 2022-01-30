@@ -7,12 +7,14 @@
   align-items: center;
   /* height: 15vh; */
 }
+
 .main_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 12px;
 }
+
 .logo_section {
   display: flex;
   justify-content: space-around;
@@ -22,6 +24,7 @@
 .app_bar {
   display: none;
 }
+
 .nav_group {
   display: flex;
   list-style-type: none;
