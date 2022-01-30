@@ -53,7 +53,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
           <div>
             <ListItem
               icon={<FaHeart />}
-              href="https://facebook.com"
+              href="/wishlist"
               badgeLabel="4"
             />
           </div>

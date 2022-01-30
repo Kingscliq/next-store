@@ -4,16 +4,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './cart-item';
 import EmptyCart from '../empty-cart';
 import CartSummary from './cart-summary';
-
+ 
 import styles from './cart.module.css';
 
-const Cart = () => {
+const Cart = () => { 
   const shoppingCart = useSelector(cart);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTotals());
-  }, [shoppingCart]);
+  }, [shoppingCart]); 
 
   return shoppingCart.length > 0 ? (
     <>

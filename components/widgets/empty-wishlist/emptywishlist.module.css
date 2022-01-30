@@ -1,0 +1,22 @@
+.container,
+.cart_desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart_desc h3 {
+  color: rgb(117, 117, 117);
+}
+
+.cart_container {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 100%;
+  background-color: var(--grey);
+}
