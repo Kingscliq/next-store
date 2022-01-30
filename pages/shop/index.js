@@ -12,7 +12,7 @@ const Shop = () => {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
   const [activeTab, setActiveTab] = useState('all');
   const dispatch = useDispatch();
-  const addProductToCart = product => {
+  const addProductToCart = product => { 
     dispatch(addToCart(product));
   };
 

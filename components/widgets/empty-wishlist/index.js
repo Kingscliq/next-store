@@ -18,7 +18,7 @@ const EmptyWishlist = () => {
         <Link href="/shop">
           <Button label="Start Shopping" className="btn btn-primary" />
         </Link>
-      </div>
+      </div> 
     </section>
   );
 };
