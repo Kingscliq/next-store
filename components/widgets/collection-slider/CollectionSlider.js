@@ -18,12 +18,9 @@ import { ProductSkeleton } from '../../elements/product-skeleton';
 const CollectionSlider = () => {
   const { data: products, isLoading } = useGetAllProductsQuery();
 
-  console.log('prod:', products);
-
   const highestPricedProducts = products?.filter(
     product => product.price > 150
   );
-  console.log('hi', highestPricedProducts);
   return (
     <section className={collectionStyles.container}>
       <p className={collectionStyles.containerHeader}>Popular this week</p>
@@ -53,8 +50,6 @@ const CollectionSlider = () => {
         navigation
         pagination={{ clickable: true }}
         scrollbar={{ draggable: true }}
-        onSwiper={swiper => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
       >
         {isLoading && <ProductSkeleton />}
         {highestPricedProducts?.map(product => (

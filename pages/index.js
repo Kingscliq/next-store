@@ -9,6 +9,7 @@ import { ProductSkeleton } from '../components/elements/product-skeleton';
 import Newsletter from '../components/widgets/Newsletter/Newsletter';
 import CollectionSlider from '../components/widgets/collection-slider/CollectionSlider';
 import Link from 'next/link';
+import { Mac } from '../assets/images';
 
 export default function Home() {
   const { data: products, isLoading } = useGetAllProductsQuery();
@@ -27,7 +28,7 @@ export default function Home() {
           >
             <div className={styles.home_categries_section_div}>
               <CategriesCard
-                imgSrc="/Mac.png"
+                imgSrc={Mac}
                 imgAlt="mac picture"
                 categoryHeading="ELECTRONICS"
               />
@@ -35,7 +36,7 @@ export default function Home() {
 
             <div className={styles.home_categries_section_div}>
               <CategriesCard
-                imgSrc="/Mac.png"
+                imgSrc={Mac}
                 imgAlt="mac picture"
                 categoryHeading="CLOTHING"
               />
