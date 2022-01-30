@@ -1,6 +1,6 @@
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
-import Button from '../components/elements/Button';
+import Button from '../components/elements/button';
 import { HomepageShowcase } from '../components/elements/carousel/homepage-showcase';
 import CategriesCard from '../components/elements/card/categories-card';
 import { useGetAllProductsQuery } from '../store/products/products-api';
