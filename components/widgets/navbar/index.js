@@ -15,10 +15,11 @@ import {
   totalCartItemsQuantity,
   getTotals,
 } from '../../../store/cart/cart-slice';
+import { wishlist } from '../../../store/wishlist/wishlist-slice';
 
 const Navbar = ({ mobileNav, setMobileNav }) => {
-  const cartItems = useSelector(cart);
   const totalQuantity = useSelector(totalCartItemsQuantity);
+  const wishList = useSelector(wishlist);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTotals());
@@ -31,7 +32,9 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
           <div className={navStyles.app_bar} onClick={() => setMobileNav(true)}>
             <FaBars />
           </div>
-          <div>NextStore</div>
+          <div>
+            <h2>NextStore</h2>
+          </div>
         </div>
         <div>
           <ul className={navStyles.nav_group}>
@@ -54,7 +57,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
             <ListItem
               icon={<FaHeart />}
               href="/wishlist"
-              badgeLabel="4"
+              badgeLabel={wishList && wishList.length}
             />
           </div>
           <div>

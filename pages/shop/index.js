@@ -12,7 +12,7 @@ const Shop = () => {
   const { data: products, error, isLoading } = useGetAllProductsQuery();
   const [activeTab, setActiveTab] = useState('all');
   const dispatch = useDispatch();
-  const addProductToCart = product => { 
+  const addProductToCart = product => {
     dispatch(addToCart(product));
   };
 
@@ -20,7 +20,7 @@ const Shop = () => {
     const allProducts = products?.map(
       ({ title, price, description, rating, image, id }) => {
         return (
-          <Link href={`/shop/products/${id}`}>
+          <Link href={`/shop/products/${id}`} key={id}>
             <div>
               <ProductCard
                 title={title}
@@ -47,7 +47,7 @@ const Shop = () => {
       ?.filter(product => product.category === 'jewelery')
       .map(product => {
         return (
-          <Link href={`/shop/products/${product.id}`}>
+          <Link href={`/shop/products/${product.id}`} key={product.id}>
             <div>
               <ProductCard
                 title={product.title}
@@ -69,7 +69,7 @@ const Shop = () => {
       .filter(product => product.category === "women's clothing")
       .map(product => {
         return (
-          <Link href={`/shop/products/${product.id}`}>
+          <Link href={`/shop/products/${product.id}`} key={product.id}>
             <div>
               <ProductCard
                 title={product.title}
@@ -91,7 +91,7 @@ const Shop = () => {
       .filter(product => product.category === "men's clothing")
       .map(product => {
         return (
-          <Link href={`/shop/products/${product.id}`}>
+          <Link href={`/shop/products/${product.id}`} key={product.id}>
             <div>
               <ProductCard
                 title={product.title}
@@ -113,7 +113,7 @@ const Shop = () => {
       .filter(product => product.category === 'electronics')
       .map(product => {
         return (
-          <Link href={`/shop/products/${product.id}`}>
+          <Link href={`/shop/products/${product.id}`} key={product.id}>
             <div>
               <ProductCard
                 title={product.title}
