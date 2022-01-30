@@ -1,7 +1,6 @@
-import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import React, { useState } from 'react';
-import Button from '../components/elements/Button';
+import Button from '../components/elements/button';
 import { HomepageShowcase } from '../components/elements/carousel/homepage-showcase';
 import CategriesCard from '../components/elements/card/categories-card';
 import { useGetAllProductsQuery } from '../store/products/products-api';
@@ -9,8 +8,6 @@ import ProductCard from '../components/elements/card/product-card';
 import { ProductSkeleton } from '../components/elements/product-skeleton';
 import Newsletter from '../components/widgets/Newsletter/Newsletter';
 import CollectionSlider from '../components/widgets/collection-slider/CollectionSlider';
-import Subscribe from '../components/widgets/subscribe/Subscribe';
-import Footer from '../components/widgets/footer/Footer';
 import Link from 'next/link';
 
 export default function Home() {
