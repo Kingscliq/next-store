@@ -57,7 +57,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
             <ListItem
               icon={<FaHeart />}
               href="/wishlist"
-              badgeLabel={wishList && wishList.length}
+              badgeLabel={wishList.length > 0 && wishList.length}
             />
           </div>
           <div>
