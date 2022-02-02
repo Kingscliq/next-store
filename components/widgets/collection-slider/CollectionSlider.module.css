@@ -32,7 +32,7 @@
     justify-content: center;
     align-items: center;
     width: auto;
-    padding-right: 2rem;
+    padding-right: 0rem;
 }
 
 .slidesContent h3 {
@@ -63,6 +63,7 @@
     text-align: center;
     border: 1px solid #334;
     padding: 1rem;
+    margin-top: 2.2rem;
 }
 
 .imgDetails {
@@ -106,14 +107,15 @@
     }
 
     .slidesContent h3 {
-        font-size: 2rem;
+        font-size: 1.2rem;
         font-weight: 400;
     }
 
     .productDescription{
         color: #000000;
         opacity: 0.7;
-        font-size: 14px;
+        font-size: 13px;
+        line-height: 1.7;
         padding-top: 1px;
     }
 
