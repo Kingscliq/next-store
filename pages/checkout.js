@@ -4,8 +4,82 @@ import { FaCcVisa } from 'react-icons/fa';
 import { FaCcMastercard } from 'react-icons/fa';
 import { FaCcPaypal } from 'react-icons/fa';
 import btnStyles from '../components/elements/button/button.module.css';
+import { Formik } from 'formik';
+import { useEffect } from 'react';
+import * as Yup from 'yup'
 
 const checkout = () => {
+  // const validate = values => {
+  //   const errors = {};
+    
+  //   if (formik.touched.name && !formik.values.name) {
+  //     errors.name = 'Required';
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formik.values.name)) {
+  //     errors.name = 'Invalid email address';
+  //   }
+
+  //   if (formik.touched.num && !formik.values.num) {
+  //     errors.num = 'Required';
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formik.values.num)) {
+  //     errors.num = 'Invalid card number';
+  //   }
+
+  //   if (formik.touched.cvv && !formik.values.cvv) {
+  //     errors.cvv = 'Required';
+  //   } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(formik.values.cvv)) {
+  //     errors.cvv = 'Invalid cvv';
+  //   }
+  
+  //   return errors;
+  // };
+
+  // const formik = useFormik({
+  //   initialValues : {
+  //     name: "",
+  //     num: "",
+  //     cvv: "",
+  //     acceptedTerms: false
+  //   },
+  //   validationSchema: Yup.object().shape({
+  //     name: Yup.string()
+  //       .min(3, "Must be t least 3 charcters")
+  //       .max(18, "18 characters or less")
+  //       .required("Required"),
+  //     num: Yup.number()
+  //       .positive()
+  //       .max(16, "Must equal 16")
+  //       .required("Required")
+  //       .test(
+  //         "Is Positive?",
+  //         "Error: The number must be greater than 0",
+  //         (value) => value > 0
+  //       ), 
+  //     cvv: Yup.number()
+  //       .positive()
+  //       .max(3, "Must equal 3")
+  //       .required("Required")
+  //       .test(
+  //         "Is Positive?",
+  //         "Error: The number must be greater than 0",
+  //         (value) => value > 0
+  //       ), 
+  //     acceptedTerms: Yup.boolean()
+  //       .required("Required")
+  //       .oneOf([true], "You must accept the terms and condition")  
+  //   }),
+  //   onSubmit: values => {
+  //     setTimeout(() => {
+  //       alert("Success");
+  //       resetForm();
+  //       setSubmitting(false);
+  //     }, 3000) 
+  //   }
+  // })
+
+  // useEffect(()=> {
+  //   console.log({formik});
+  // }, [])
+
   return (
     <section className={checkoutStyles.checkout}>
       <div className={checkoutStyles.wrapper}>
@@ -60,68 +134,92 @@ const checkout = () => {
                 </p>
               </div>
             </div>
-
-            <form>
-              <div>
-                <label>{"Card holder's name"}</label>
-                <input type="text" placeholder="The name on the card" />
-              </div>
-
-              <div>
-                <label>Card number</label>
-                <input type="text" placeholder="The card number" />
-              </div>
-            </form>
           </div>
 
-          <div className={checkoutStyles.cart}>
+          <form>
             <div>
-              <label>Expiry Date</label>
-              <select name="expireMM" className={checkoutStyles.month}>
-                <option value="">Month</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
-              </select>
-
-              <select name="expireYY" className={checkoutStyles.year}>
-                <option value="">Year</option>
-                <option value="20">2021</option>
-                <option value="21">2022</option>
-                <option value="22">2023</option>
-                <option value="23">2024</option>
-                <option value="24">2025</option>
-              </select>
+              <label>{"Card holder's name"}</label>
+              <input 
+                type="text" 
+                placeholder="The name on the card" 
+                // onChange={formik.handleChange}
+              />
+              {/* {formik.errors.name ? <div>{formik.errors.name}</div> : null} */}
             </div>
 
             <div>
-              <label>CVV</label>
-              <input type="numbers" maxLength="3" />
+              <label>Card number</label>
+              <input 
+                type="text" 
+                placeholder="The card number" 
+                // onChange={formik.handleChange}
+              />
             </div>
-          </div>
 
-          <div className={checkoutStyles.saveDetails}>
-            <input type="checkbox" />
-            <span>Save card details for future use</span>
-          </div>
+            <div className={checkoutStyles.cart}>
+              <div>
+                <label>Expiry Date</label>
+                <select 
+                  name="expireMM" 
+                  className={checkoutStyles.month}
+                >
+                  <option value="">Month</option>
+                  <option value="01">January</option>
+                  <option value="02">February</option>
+                  <option value="03">March</option>
+                  <option value="04">April</option>
+                  <option value="05">May</option>
+                  <option value="06">June</option>
+                  <option value="07">July</option>
+                  <option value="08">August</option>
+                  <option value="09">September</option>
+                  <option value="10">October</option>
+                  <option value="11">November</option>
+                  <option value="12">December</option>
+                </select>
 
-          <div>
-            <button
-              className={checkoutStyles.payBtn}
-              onClick={() => alert('Button Clicked')}
-            >
-              Pay now
-            </button>
-          </div>
+                <select 
+                  name="expireYY" 
+                  className={checkoutStyles.year}
+                >
+                  <option value="">Year</option>
+                  <option value="20">2021</option>
+                  <option value="21">2022</option>
+                  <option value="22">2023</option>
+                  <option value="23">2024</option>
+                  <option value="24">2025</option>
+                </select>
+              </div>
+
+              <div>
+                <label>CVV</label>
+                <input 
+                  type="numbers" 
+                  maxLength="3" 
+                  // onChange={formik.handleChange}
+                />
+              </div>
+
+            </div>
+
+            <div className={checkoutStyles.saveDetails}>
+              <input 
+                type="checkbox" 
+              />
+              <span>Save card details for future use</span>
+            </div>
+
+            <div>
+              <button
+                className={checkoutStyles.payBtn}
+                type="submit" 
+                // onClick={() => alert('Button Clicked')}
+              >
+                Pay now
+              </button>
+            </div>
+          </form>
+ 
         </div>
 
         <div className={checkoutStyles.cartHistory}>
