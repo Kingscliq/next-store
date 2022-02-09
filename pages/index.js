@@ -18,7 +18,7 @@ export default function Home() {
     product => product.rating.rate > 4
   );
   return (
-    <div>
+    <div> 
       <main className={styles.main}>
         <HomepageShowcase />
 
