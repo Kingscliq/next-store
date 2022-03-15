@@ -121,15 +121,9 @@ const checkout = () => {
               num: Yup.string()
                 .min(3, "Must be 16 charcters")                                
                 .required("Required"), 
-              cvv: Yup.number()
-                .positive()
-                .max(3, "Must equal 3")
-                .required("Required")
-                .test(
-                  "Is Positive?",
-                  "Error: The number must be greater than 0",
-                  (value) => value > 0
-                ), 
+              cvv: Yup.number()                
+                .min(3, "Must equal 3 numbers")
+                .required("Required"), 
               acceptedTerms: Yup.boolean()
                 .required("Required")
                 .oneOf([true], "You must accept the terms and condition")  

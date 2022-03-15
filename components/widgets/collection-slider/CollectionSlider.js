@@ -20,7 +20,7 @@ const CollectionSlider = () => {
 
   const highestPricedProducts = products?.filter(
     product => product.price > 150
-  );
+  ); 
   return (
     <section className={collectionStyles.container}>
       <p className={collectionStyles.containerHeader}>Popular this week</p>
