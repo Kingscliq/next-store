@@ -21,6 +21,11 @@ const CollectionSlider = () => {
   const highestPricedProducts = products?.filter(
     product => product.price > 150
   ); 
+
+  const handleClick = () => {
+
+  }
+  
   return (
     <section className={collectionStyles.container}>
       <p className={collectionStyles.containerHeader}>Popular this week</p>
@@ -68,14 +73,14 @@ const CollectionSlider = () => {
                       <p>
                         {'Price:'}
                         <span className={collectionStyles.price}>
-                          {product.price}
+                          {" "}${product.price}
                         </span>
                       </p>
 
                       <p>
                         {'Rating:'}
                         <span className={collectionStyles.size}>
-                          {product.rating.rate}
+                          {" "}{product.rating.rate}
                           {'/5'}
                         </span>
                       </p>
@@ -84,7 +89,7 @@ const CollectionSlider = () => {
                     <div className={newsStyles.imgContainer}>
                       <button
                         className={btnStyles.btn_darke}
-                        onClick={() => alert('Button Clicked')}
+                        onClick={handleClick}
                       >
                         Buy now
                       </button>

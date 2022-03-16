@@ -1,0 +1,52 @@
+.about {
+    width: 75%;
+    margin: 6rem auto 9rem auto;
+}
+
+.aboutHeadings {
+    margin-bottom: 6rem;    
+}
+
+.aboutHeadings h2{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.aboutHeadings p {
+    text-align: center;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.aboutImageDiv {
+    margin-top: 2rem;
+}
+
+.aboutImageDiv h4 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.aboutImages {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.aboutImg {
+    position: relative;
+}
+
+.aboutDev {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    left: 0;
+    bottom: 10px;
+    box-shadow: rgba(100, 100, 111, 0.9) 0px 7px 29px 0px;
+    text-align: center;
+    padding: 10px 0;
+    color: #efefef;
+}
+
+

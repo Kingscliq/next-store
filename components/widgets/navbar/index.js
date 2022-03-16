@@ -41,7 +41,7 @@ const Navbar = ({ mobileNav, setMobileNav }) => {
             <ListItem href="/" linkText="Home" />
             <ListItem href="/shop" linkText="Shop" />
             <ListItem href="/about" linkText="About" />
-          </ul>
+          </ul> 
         </div>
         <div className={navStyles.socials}>
           <div>

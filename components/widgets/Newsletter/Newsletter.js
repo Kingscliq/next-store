@@ -3,6 +3,7 @@ import collectionStyles from '../collection-slider/CollectionSlider.module.css';
 import btnStyles from '../../elements/button/button.module.css';
 import Image from 'next/image';
 import { FaAngleRight } from "react-icons/fa";
+import Link from 'next/link';
 
 const Newsletter = () => { 
     return (
@@ -27,19 +28,21 @@ const Newsletter = () => {
                             70% off on all our products 
                         </p>
 
-                        
-                        <div className={newsStyles.imgContainer}>
-                            <button
-                                className={btnStyles.btn_whitee}
-                                onClick={() => alert('Button Clicked')}
-                            >
-                                Buy now 
-                            </button>
+                        <Link href="/shop">
+                            <div className={newsStyles.imgContainer}>
+                                <button
+                                    className={btnStyles.btn_whitee}
+                                    // onClick={() => alert('Button Clicked')}                                
+                                >
+                                  Start shopping                             
+                                </button>
 
-                            <div className={collectionStyles.imgDetails}>
-                                < FaAngleRight style={{color: 'white'}}/>
+                                <div className={newsStyles.imgDetailss}>
+                                    < FaAngleRight style={{color: 'white'}}/>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
+                        
                     </div>
 
                 </div>
@@ -47,7 +50,7 @@ const Newsletter = () => {
                 <div className={newsStyles.newsletterImg}>
                     <Image 
                         src="/newsletterImg.svg" 
-                        alt="Vercel Logo" 
+                        alt="woman shopping happiness" 
                         width={720} 
                         height={481}                        
                         quality='100'      
