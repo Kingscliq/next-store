@@ -9,6 +9,7 @@ import { ProductSkeleton } from '../components/elements/product-skeleton';
 import Newsletter from '../components/widgets/Newsletter/Newsletter';
 import CollectionSlider from '../components/widgets/collection-slider/CollectionSlider';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mac } from '../assets/images';
 
 export default function Home() {
@@ -22,26 +23,11 @@ export default function Home() {
       <main className={styles.main}>
         <HomepageShowcase />
 
-        <section className={[styles.card_containers, 'mb-3'].join(' ')}>
-          <section
-            className={[styles.home_categries_section, 'container'].join(' ')}
-          >
-            <div className={styles.home_categries_section_div}>
-              <CategriesCard
-                imgSrc={Mac}
-                imgAlt="mac picture"
-                categoryHeading="ELECTRONICS"
-              />
-            </div>
-
-            <div className={styles.home_categries_section_div}>
-              <CategriesCard
-                imgSrc={Mac}
-                imgAlt="mac picture"
-                categoryHeading="CLOTHING"
-              />
-            </div>
-          </section>
+        <section className={styles.sectionImgDiv}>
+          <div  
+            className={styles.sectionImg}          
+          >                        
+          </div>
         </section>
       </main>
       <div className="container">

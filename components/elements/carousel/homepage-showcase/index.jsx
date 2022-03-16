@@ -15,20 +15,24 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import { useGetAllProductsQuery } from '../../../../store/products/products-api';
 import { ProductSkeleton } from '../../product-skeleton';
+import {BiLoaderCircle} from 'react-icons/bi';
 
 const HomepageShowcase = () => {
   const { data: products, isLoading } = useGetAllProductsQuery();
-  
+  const [loading, setLoading] = useState(false);
   const highestRatedProducts = products?.filter(
-    product => product.rating.rate > 4
+    product => product.rating.rate > 4.5
+    
   );
+  useEffect(() => {
+    const timer = setTimeout(() => {setLoading(false)}, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
-  console.log('====================================');
-  console.log(products);
-  console.log('====================================');
+
   
   return (
-    <section className={`${ShowcaseStyle.carousel_slider} ${Styles.container}`}>
+    <section className={`${ShowcaseStyle.carousel_slider} ${Styles.container}`}>    
       <div className={ShowcaseStyle.carousel_item}>
         <Swiper
           modules={[Navigation, Pagination, Scrollbar, A11y]}
@@ -37,11 +41,11 @@ const HomepageShowcase = () => {
           breakpoints={{
             240: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
             640: {
               slidesPerView: 1,
-              spaceBetween: 10,
+              spaceBetween: 20,
             },
             768: {
               slidesPerView: 1,
@@ -55,20 +59,24 @@ const HomepageShowcase = () => {
           navigation
           pagination={{ clickable: true }}
           // scrollbar={{ draggable: true }}
-        >  
-          {
-            isLoading && <ProductSkeleton />
-          }    
-          {
-            highestRatedProducts?.map(product => (
+        >                      
+        
+          {isLoading && <ProductSkeleton />}
+          { loading?
+            <div className={ShowcaseStyle.loader}>
+              <h1>Loading ...</h1>
+              <BiLoaderCircle/>
+            </div> 
+            :highestRatedProducts?.map(product => (
               <SwiperSlide key={product.id}>
                 <div className={ShowcaseStyle.main_item}>
-                  <div>
+                  <div className={ShowcaseStyle.main_item_details}>
                     <h2>
-                      HP PAVILION WAVE <br />
-                      <strong>DESKTOP INTEL CORE i3</strong>
+                      {/* HP PAVILION WAVE <br />
+                      <strong>DESKTOP INTEL CORE i3</strong> */}
+                      {product.title}
                     </h2>
-                    <p>lorem ipseum isi una ggggahhh hah ipseum udjk hhd</p>
+                    <p>{product.description}</p>
                     <div className={ShowcaseStyle.showcase_btn_container}>
                       <Button
                         label="ORDER"
@@ -83,116 +91,20 @@ const HomepageShowcase = () => {
                       />
                     </div>
                   </div>
-                  <div>
+                  <div className={ShowcaseStyle.main_item_img}>
                     <Image
-                      src={'/HP Pavilion.png'}
+                      src={product.image}
                       width={472}
                       height={581}
-                      alt="mac image"
+                      alt="product image"
+                      className={ShowcaseStyle.main_item_image}
                     />
                   </div>
                 </div>
               </SwiperSlide>
             ))
           }      
-          <SwiperSlide>
-            <div className={ShowcaseStyle.main_item}>
-              <div>
-                <h2>
-                  HP PAVILION WAVE <br />
-                  <strong>DESKTOP INTEL CORE i3</strong>
-                </h2>
-                <p>lorem ipseum isi una ggggahhh hah ipseum udjk hhd</p>
-                <div className={ShowcaseStyle.showcase_btn_container}>
-                  <Button
-                    label="ORDER"
-                    className={btnStyles.btn_primary}
-                    onClick={() => alert('Button Clicked')}
-                  />
-
-                  <Button
-                    label="ADD TO CART"
-                    className={btnStyles.btn_white}
-                    onClick={() => alert('Button Clicked')}
-                  />
-                </div>
-              </div>
-              <div>
-                <Image
-                  src={'/HP Pavilion.png'}
-                  width={472}
-                  height={581}
-                  alt="mac image"
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className={ShowcaseStyle.main_item}>
-              <div>
-                <h2>
-                  HP PAVILION WAVE <br />
-                  <strong>DESKTOP INTEL CORE i3</strong>
-                </h2>
-                <p>lorem ipseum isi una ggggahhh hah ipseum udjk hhd</p>
-                <div className={ShowcaseStyle.showcase_btn_container}>
-                  <Button
-                    label="ORDER"
-                    className={btnStyles.btn_primary}
-                    onClick={() => alert('Button Clicked')}
-                  />
-
-                  <Button
-                    label="ADD TO CART"
-                    className={btnStyles.btn_white}
-                    onClick={() => alert('Button Clicked')}
-                  />
-                </div>
-              </div>
-              <div>
-                <Image
-                  src={'/HP Pavilion.png'}
-                  width={472}
-                  height={581}
-                  alt="mac image"
-                />
-              </div>
-            </div>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <div className={ShowcaseStyle.main_item}>
-              <div>
-                <h2>
-                  HP PAVILION WAVE <br />
-                  <strong>DESKTOP INTEL CORE i3</strong>
-                </h2>
-                <p>lorem ipseum isi una ggggahhh hah ipseum udjk hhd</p>
-                <div className={ShowcaseStyle.showcase_btn_container}>
-                  <Button
-                    label="ORDER"
-                    className={btnStyles.btn_primary}
-                    onClick={() => alert('Button Clicked')}
-                  />
-
-                  <Button
-                    label="ADD TO CART"
-                    className={btnStyles.btn_white}
-                    onClick={() => alert('Button Clicked')}
-                  />
-                </div>
-              </div>
-              <div>
-                <Image
-                  src={'/HP Pavilion.png'}
-                  width={472}
-                  height={581}
-                  alt="mac image"
-                />
-              </div>
-            </div>
-          </SwiperSlide>
+          
         </Swiper>  
         
       </div>

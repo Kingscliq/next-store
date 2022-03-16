@@ -85,7 +85,7 @@
   max-width: 300px;
 }
 
-.card:hover,
+.card:hover, 
 .card:focus,
 .card:active {
   color: #0070f3;
@@ -122,6 +122,19 @@
 .card_containers {
   background-color: var(--grey);
   width: 100%;
+}
+
+.sectionImgDiv {
+  height: 70vh;
+  width: 85%;
+  margin: 3rem auto 8rem auto;
+  background: #334;
+  background: url('../assets/images/section-bg.jpg') no-repeat center center/cover;
+}
+
+.sectionImg {
+  z-index: 4;
+  
 }
 
 @media (max-width: 768px) {

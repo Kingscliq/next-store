@@ -35,7 +35,7 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  padding: 10px 12px;
+  padding: 64px 12px 0px 12px;
 }
 .close {
   cursor: pointer;

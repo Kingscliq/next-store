@@ -8,7 +8,7 @@ const MobileNav = ({ setMobileNav }) => {
     <section className={navStyles.mobile_nav}>
       <nav>
         <div className={navStyles.logo}>
-          <div>Logo</div>
+          <div>NextStore</div>
           <div onClick={() => setMobileNav(false)} className={navStyles.close}>
             <FaTimes />
           </div>

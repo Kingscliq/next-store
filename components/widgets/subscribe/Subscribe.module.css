@@ -78,12 +78,17 @@
 
     .icon {
         top: 4px;
-        left: 217px;
+        /* left: 217px; */
         border-radius: 50%;
         padding: 6px;
         border: none;
     }
+
+    .flexed2 form input {        
+        width: 100%;        
+    }
     
+  
 }
 
 @media only screen and (max-width: 428px) { 

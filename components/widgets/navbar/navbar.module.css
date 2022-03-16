@@ -28,6 +28,7 @@
 .nav_group {
   display: flex;
   list-style-type: none;
+  cursor: pointer;
 }
 
 .nav_links {
@@ -71,6 +72,10 @@
   .app_bar,
   .mobile_cart {
     display: block;
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .socials,
   .nav_group {
