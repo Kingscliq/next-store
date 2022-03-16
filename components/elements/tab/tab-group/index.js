@@ -21,7 +21,7 @@ const TabGroup = ({ activeTab, setActiveTab }) => {
           ].join(' ')}
           onClick={() => setActiveTab('all')}
         >
-          <div>
+          <div className={tabStyles.tabImg}>
             <Image src={allIcon} />
           </div>
           <div>ALL</div>
@@ -33,7 +33,7 @@ const TabGroup = ({ activeTab, setActiveTab }) => {
           ].join(' ')}
           onClick={() => setActiveTab('jewelry')}
         >
-          <div>
+          <div className={tabStyles.tabImg}>
             <Image src={jewelryIcon} />
           </div>
           <div>JEWELRY</div>
@@ -45,7 +45,7 @@ const TabGroup = ({ activeTab, setActiveTab }) => {
           ].join(' ')}
           onClick={() => setActiveTab('female-cloth')}
         >
-          <div>
+          <div className={tabStyles.tabImg}>
             <Image src={femaleClothIcon} />
           </div>
           <div>FEMALE CLOTHES</div>
@@ -57,7 +57,7 @@ const TabGroup = ({ activeTab, setActiveTab }) => {
           ].join(' ')}
           onClick={() => setActiveTab('men-cloth')}
         >
-          <div>
+          <div className={tabStyles.tabImg}>
             <Image src={menCloth} />
           </div>
           <div>MENS CLOTHES</div>
@@ -69,7 +69,7 @@ const TabGroup = ({ activeTab, setActiveTab }) => {
           ].join(' ')}
           onClick={() => setActiveTab('electronics')}
         >
-          <div>
+          <div className={tabStyles.tabImg}>
             <Image src={electronicsIcon} />
           </div>
           <div>ELECTRONICS</div>

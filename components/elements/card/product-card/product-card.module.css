@@ -38,7 +38,7 @@
 
 .card_content h3 {
   /* color: var(--dark); */
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 500;
 }
 .price_box {
@@ -49,5 +49,5 @@
 }
 
 .img_container {
-  padding: 2.5rem;
+  padding: 3.5rem;
 }
